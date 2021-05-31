@@ -45,6 +45,18 @@
             android:inputType="textEmailAddress"
             android:maxLines="1" />
 
+        <TextView
+            android:id="@+id/emailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Error"
+            android:visibility="gone"
+            android:fontFamily="@font/metropolis_regular"
+            android:textColor="@color/primary"
+            android:textSize="9sp"
+            android:layout_marginTop="5dp"
+            />
+
         <EditText
             android:layout_marginTop="10dp"
             android:id="@+id/PassEt"
@@ -60,6 +72,17 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:maxLines="1" />
+        <TextView
+            android:id="@+id/passwordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password Error"
+            android:visibility="gone"
+            android:fontFamily="@font/metropolis_regular"
+            android:textColor="@color/primary"
+            android:textSize="9sp"
+            android:layout_marginTop="5dp"
+            />
 
         <TextView
             android:id="@+id/forgottenPassTv"
@@ -73,6 +96,7 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/loginBtn"

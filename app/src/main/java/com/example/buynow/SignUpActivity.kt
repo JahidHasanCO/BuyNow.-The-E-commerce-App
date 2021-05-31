@@ -15,6 +15,7 @@ import androidx.core.widget.doOnTextChanged
 import com.example.buynow.Utils.Extensions.toString
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
+import com.example.buynow.Utils.FirebaseUtils.firebaseUser
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -99,7 +100,7 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 if (emailEt.text.matches(emailPattern.toRegex())) {
-                    fullName.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(applicationContext,R.drawable.ic_check), null)
+                    emailEt.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(applicationContext,R.drawable.ic_check), null)
                 }
             }
         })
@@ -196,7 +197,7 @@ class SignUpActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         toast("created account successfully !")
-//                        sendEmailVerification()
+                        sendEmailVerification()
                         startActivity(Intent(this, HomeActivity::class.java))
                         finish()
                     } else {
@@ -204,5 +205,15 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
 
+    }
+
+    private fun sendEmailVerification() {
+        firebaseUser?.let {
+            it.sendEmailVerification().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    toast("email sent to $userEmail")
+                }
+            }
+        }
     }
 }
