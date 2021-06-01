@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.buynow.Utils.Extensions.toast
+import com.example.buynow.Utils.FirebaseUtils
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -54,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
         signInBtn.setOnClickListener {
             checkInput()
 
-            loadingDialog.startLoadingDialog()
+
         }
 
 
@@ -153,17 +154,27 @@ class LoginActivity : AppCompatActivity() {
 
     private fun signInUser() {
 
+        loadingDialog.startLoadingDialog()
         signInEmail = emailEt.text.toString().trim()
         signInPassword = passEt.text.toString().trim()
-
 
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
-                        startActivity(Intent(this, HomeActivity::class.java))
-                        loadingDialog.dismissDialog()
-                        toast("signed in successfully")
-                        finish()
+                        if(FirebaseUtils.firebaseUser?.isEmailVerified == true){
+                            startActivity(Intent(this, HomeActivity::class.java))
+                            loadingDialog.dismissDialog()
+                            toast("signed in successfully")
+                            finish()
+                        }
+                        else {
+                            loadingDialog.dismissDialog()
+                            val intent = Intent(this, EmailVerifyActivity::class.java)
+                            intent.putExtra("EmailAddress", emailEt.text.toString().trim())
+                            intent.putExtra("loginPassword", passEt.text.toString().trim())
+                            startActivity(intent)
+                        }
+
                     } else {
                         toast("sign in failed")
                         loadingDialog.dismissDialog()
