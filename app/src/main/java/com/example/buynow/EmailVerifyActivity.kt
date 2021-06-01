@@ -19,7 +19,7 @@ class EmailVerifyActivity : AppCompatActivity() {
     lateinit var EmailAddress:String
     lateinit var loginPassword:String
 
-
+    lateinit var reSendEmail_emailVerifyPage:TextView
     lateinit var tryAgain_emailVerifyPage:Button
     lateinit var title_emailVerifyPage:TextView
     lateinit var msg_emailVerifyPage:TextView
@@ -34,6 +34,7 @@ class EmailVerifyActivity : AppCompatActivity() {
         title_emailVerifyPage = findViewById(R.id.title_emailVerifyPage)
         msg_emailVerifyPage = findViewById(R.id.msg_emailVerifyPage)
         image_emailVerifyPage = findViewById(R.id.image_emailVerifyPage)
+        reSendEmail_emailVerifyPage = findViewById(R.id.reSendEmail_emailVerifyPage)
 
         EmailAddress = intent.getStringExtra("EmailAddress").toString()
         loginPassword = intent.getStringExtra("loginPassword").toString()
@@ -46,6 +47,21 @@ class EmailVerifyActivity : AppCompatActivity() {
             firebaseUser?.reload()
             verifyEmail()
         }
+
+        reSendEmail_emailVerifyPage.setOnClickListener {
+            sendEmailVerification()
+        }
+    }
+
+    private fun sendEmailVerification() {
+
+        firebaseUser?.let {
+            it.sendEmailVerification().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    toast("New Link send your "+ EmailAddress + " Email Address.")
+                }
+            }
+        }
     }
 
     private fun verifyEmail() {
@@ -54,8 +70,9 @@ class EmailVerifyActivity : AppCompatActivity() {
 
             image_emailVerifyPage.setImageResource(R.drawable.ic_success)
             title_emailVerifyPage.text = "Congratulations!!!"
-            msg_emailVerifyPage.text = EmailAddress + " email is Verified. You can login your account."
+            msg_emailVerifyPage.text = "Your email has been Verified. You can login your account."
             tryAgain_emailVerifyPage.visibility = View.GONE
+            reSendEmail_emailVerifyPage.visibility = View.GONE
 
             Handler().postDelayed({
 

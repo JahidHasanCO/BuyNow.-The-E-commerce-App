@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             checkUser()
 
-        }, 2000)
+        }, 1000)
 
     }
 
