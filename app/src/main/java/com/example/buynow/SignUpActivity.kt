@@ -13,9 +13,15 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 import com.example.buynow.Utils.Extensions.toast
+import com.example.buynow.Utils.FirebaseUtils.databaseReference
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
+import com.example.buynow.Utils.FirebaseUtils.firebaseDataBase
 import com.example.buynow.Utils.FirebaseUtils.firebaseUser
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.database.DatabaseReference
+import java.util.*
 import java.util.regex.Pattern
+import kotlin.collections.HashMap
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -25,6 +31,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var emailEt: EditText
     private lateinit var passEt: EditText
     private lateinit var CpassEt: EditText
+
+
 
     private lateinit var loadingDialog: loadingDialog
 
@@ -40,6 +48,8 @@ class SignUpActivity : AppCompatActivity() {
         passEt = findViewById(R.id.PassEt_signUpPage)
         CpassEt = findViewById(R.id.cPassEt_signUpPage)
         val signInTv = findViewById<TextView>(R.id.signInTv_signUpPage)
+
+
 
         textAutoCheck()
         loadingDialog = loadingDialog(this)
@@ -200,6 +210,7 @@ class SignUpActivity : AppCompatActivity() {
             firebaseAuth.createUserWithEmailAndPassword(emailEt.text.toString().trim(), passEt.text.toString().trim())
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        storeUserData()
                         sendEmailVerification()
                         loadingDialog.dismissDialog()
 
@@ -209,6 +220,29 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
 
+    }
+
+    private fun storeUserData() {
+
+
+
+        val userHashmap: HashMap<String, String>  =  HashMap()
+
+        userHashmap.put("userName", fullName.text.toString())
+        userHashmap.put("userImage", "")
+        userHashmap.put("userUid", firebaseUser!!.uid)
+        userHashmap.put("userEmail", emailEt.text.toString())
+        userHashmap.put("userAddress", "")
+        userHashmap.put("userPhone", "")
+
+
+
+        databaseReference.child("Users")
+            .child(firebaseUser.uid)
+            .setValue(userHashmap)
+            .addOnSuccessListener(OnSuccessListener {
+                toast("User Data Stored")
+            })
     }
 
     private fun sendEmailVerification() {
@@ -226,3 +260,5 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 }
+
+

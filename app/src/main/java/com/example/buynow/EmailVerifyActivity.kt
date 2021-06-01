@@ -57,18 +57,23 @@ class EmailVerifyActivity : AppCompatActivity() {
             msg_emailVerifyPage.text = EmailAddress + " email is Verified. You can login your account."
             tryAgain_emailVerifyPage.visibility = View.GONE
 
+            Handler().postDelayed({
 
-            FirebaseUtils.firebaseAuth.signInWithEmailAndPassword(EmailAddress, loginPassword)
-                .addOnCompleteListener { signIn ->
-                    if (signIn.isSuccessful) {
-                        startActivity(Intent(this, HomeActivity::class.java))
-                        toast("signed in successfully")
-                        finish()
-                    } else {
-                        toast("sign in failed")
+                FirebaseUtils.firebaseAuth.signInWithEmailAndPassword(EmailAddress, loginPassword)
+                    .addOnCompleteListener { signIn ->
+                        if (signIn.isSuccessful) {
+                            startActivity(Intent(this, HomeActivity::class.java))
+                            toast("signed in successfully")
+                            finish()
+                        } else {
+                            toast("sign in failed")
 
+                        }
                     }
-                }
+
+            }, 2000)
+
+
         }
         else{
             //email not verified
