@@ -24,7 +24,7 @@
         android:background="@drawable/menu_bg"
         android:id="@+id/bottomNavMenu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
