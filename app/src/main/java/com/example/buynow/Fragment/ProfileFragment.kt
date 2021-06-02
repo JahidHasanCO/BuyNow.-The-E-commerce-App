@@ -11,23 +11,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.PopupMenu
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.bumptech.glide.Glide
+import com.example.buynow.LoginActivity
+import com.example.buynow.Model.User
 
 import com.example.buynow.R
 import com.example.buynow.SettingsActivity
-import com.example.buynow.Utils.Extensions
 import com.example.buynow.Utils.Extensions.toast
-import com.example.buynow.Utils.FirebaseUtils
+import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
+
 import com.example.buynow.Utils.FirebaseUtils.firebaseDataBase
 import com.example.buynow.Utils.FirebaseUtils.firebaseUser
 
 import com.example.buynow.Utils.FirebaseUtils.storageReference
 import com.example.buynow.loadingDialog
 import com.google.android.gms.tasks.Continuation
-import com.google.android.gms.tasks.OnSuccessListener
+
 import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.database.*
+
 import com.google.firebase.storage.UploadTask
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.IOException
@@ -44,6 +49,9 @@ class ProfileFragment : Fragment() {
     private lateinit var loadingDialog: loadingDialog
 
     lateinit var uploadImage_profileFrag:Button
+    lateinit var profileName_profileFrag:TextView
+
+    lateinit var dataRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,10 +67,17 @@ class ProfileFragment : Fragment() {
         profileImage_profileFrag = view.findViewById(R.id.profileImage_profileFrag)
         val settingCd_profileFrag = view.findViewById<CardView>(R.id.settingCd_profileFrag)
         uploadImage_profileFrag = view.findViewById(R.id.uploadImage_profileFrag)
+        profileName_profileFrag = view.findViewById(R.id.profileName_profileFrag)
+
+        dataRef = firebaseDataBase.getReference("Users")
+
 
         loadingDialog = loadingDialog(context as Activity)
 
         uploadImage_profileFrag.visibility = View.GONE
+
+
+        getUserData()
 
         uploadImage_profileFrag.setOnClickListener {
             uploadImage()
@@ -95,6 +110,30 @@ class ProfileFragment : Fragment() {
     }
 
         return view
+    }
+
+    private fun getUserData() {
+
+        if (firebaseUser != null) {
+            dataRef.child(firebaseUser.uid).get().addOnSuccessListener {
+                if (it.exists()){
+
+                    val nameGetFromFirebase = it.child("userName").value
+                    profileName_profileFrag.text = "" + nameGetFromFirebase.toString()
+
+                    Glide.with(this)
+                        .load(it.child("userImage").value.toString())
+                        .placeholder(R.drawable.ic_profile)
+                        .into(profileImage_profileFrag)
+
+                }else{
+
+                }
+            }.addOnFailureListener {
+
+            }
+        }
+
     }
 
     private fun launchGallery() {
@@ -158,12 +197,14 @@ class ProfileFragment : Fragment() {
 
     private fun addUploadRecordToDb(uri: String){
 
+        val df = firebaseDataBase.getReference("Users")
+
         val userHashmap: HashMap<String, Any>  =  HashMap()
 
         userHashmap.put("userImage", uri)
 
         if (firebaseUser != null) {
-            FirebaseUtils.databaseReference.child("Users").child(firebaseUser.uid)
+            df.child(firebaseUser.uid)
                 .updateChildren(userHashmap)
                 .addOnSuccessListener {
 

@@ -10,7 +10,7 @@ object FirebaseUtils {
     val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     val firebaseUser: FirebaseUser? = firebaseAuth.currentUser
     val firebaseDataBase: FirebaseDatabase = FirebaseDatabase.getInstance()
-    val  databaseReference:DatabaseReference = firebaseDataBase.reference
+
 
     val firebaseStore = FirebaseStorage.getInstance()
     val storageReference = FirebaseStorage.getInstance().reference

@@ -19,22 +19,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
+            android:layout_marginLeft="22dp"
+            android:gravity="center"
             android:layout_weight="1"
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/metropolis_semibold"
+            android:fontFamily="@font/metropolis_regular"
             android:text="My Profile"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-        <androidx.legacy.widget.Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+
 
         <ImageView
             android:id="@+id/searchIv_ProfileFrag"
@@ -81,7 +81,7 @@
                 android:id="@+id/profileName_profileFrag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/metropolis_semibold"
+                android:fontFamily="@font/metropolis_regular"
                 android:text="Profile Name"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -142,7 +142,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="My Orders"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -190,7 +190,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="Shipping addresses"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -218,7 +218,7 @@
             android:layout_height="70dp"
             android:layout_marginTop="5dp"
             app:cardBackgroundColor="@color/background"
-            app:cardElevation="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -239,7 +239,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="Payment methods"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -265,9 +265,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="5dp"
             app:cardBackgroundColor="@color/background"
-            app:cardElevation="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -288,7 +287,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="Promocodes"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -314,9 +313,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="5dp"
             app:cardBackgroundColor="@color/background"
-            app:cardElevation="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -337,7 +335,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="My reviews"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -363,10 +361,10 @@
             android:id="@+id/settingCd_profileFrag"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="5dp"
+
             android:layout_marginBottom="5dp"
             app:cardBackgroundColor="@color/background"
-            app:cardElevation="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -387,7 +385,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/metropolis_semibold"
+                        android:fontFamily="@font/metropolis_regular"
                         android:text="Settings"
                         android:textColor="@color/black"
                         android:textSize="16sp" />

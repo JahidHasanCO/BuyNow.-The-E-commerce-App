@@ -1,26 +1,31 @@
 package com.example.buynow
 
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 import com.example.buynow.Utils.Extensions.toast
-import com.example.buynow.Utils.FirebaseUtils.databaseReference
+
 import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
 import com.example.buynow.Utils.FirebaseUtils.firebaseDataBase
+
 import com.example.buynow.Utils.FirebaseUtils.firebaseUser
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.DatabaseReference
+
 import java.util.*
-import java.util.regex.Pattern
+
 import kotlin.collections.HashMap
 
 
@@ -32,9 +37,9 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var passEt: EditText
     private lateinit var CpassEt: EditText
 
+    private lateinit var databaseReference: DatabaseReference
 
-
-    private lateinit var loadingDialog: loadingDialog
+    lateinit var progressDialog:ProgressDialog
 
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -49,10 +54,12 @@ class SignUpActivity : AppCompatActivity() {
         CpassEt = findViewById(R.id.cPassEt_signUpPage)
         val signInTv = findViewById<TextView>(R.id.signInTv_signUpPage)
 
+        databaseReference = firebaseDataBase.getReference("Users")
 
+        progressDialog = ProgressDialog(this)
 
         textAutoCheck()
-        loadingDialog = loadingDialog(this)
+
         signInTv.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -185,7 +192,7 @@ class SignUpActivity : AppCompatActivity() {
 
         if (!emailEt.text.matches(emailPattern.toRegex())) {
             toast("Enter Valid Email")
-           return
+            return
         }
         if(passEt.text.isEmpty()){
             toast("Password can't empty!")
@@ -202,21 +209,29 @@ class SignUpActivity : AppCompatActivity() {
     }
 
 
-    private fun signIn() {
-            loadingDialog.startLoadingDialog()
 
+    private fun signIn() {
+
+        progressDialog.setTitle("Please Wait")
+        progressDialog.setMessage("Creating Account")
+        progressDialog.show()
+
+        val emailV: String = emailEt.text.toString()
+        val passV: String = passEt.text.toString()
 
             /*create a user*/
-            firebaseAuth.createUserWithEmailAndPassword(emailEt.text.toString().trim(), passEt.text.toString().trim())
+            firebaseAuth.createUserWithEmailAndPassword(emailV,passV)
+                .addOnSuccessListener {
+
+                }
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         storeUserData()
-                        sendEmailVerification()
-                        loadingDialog.dismissDialog()
+                    sendEmailVerification()
 
                     } else {
+                        progressDialog.dismiss()
                         toast("failed to Authenticate !")
-                        loadingDialog.dismissDialog()
                     }
                 }
 
@@ -224,32 +239,32 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun storeUserData() {
 
+        progressDialog.setMessage("Store User Data")
+        val userHashmap: HashMap<String, String> = HashMap()
 
+        userHashmap["userName"] = "" + fullName.text.toString()
+        userHashmap["userImage"] = ""
+        userHashmap["userUid"] = firebaseUser!!.uid
+        userHashmap["userEmail"] = emailEt.text.toString()
+        userHashmap["userAddress"] = ""
+        userHashmap["userPhone"] = ""
 
-        val userHashmap: HashMap<String, String>  =  HashMap()
-
-        userHashmap.put("userName", fullName.text.toString())
-        userHashmap.put("userImage", "")
-        userHashmap.put("userUid", firebaseUser!!.uid)
-        userHashmap.put("userEmail", emailEt.text.toString())
-        userHashmap.put("userAddress", "")
-        userHashmap.put("userPhone", "")
-
-
-
-        databaseReference.child("Users")
-            .child(firebaseUser.uid)
+        databaseReference.child(firebaseUser.uid)
             .setValue(userHashmap)
             .addOnSuccessListener(OnSuccessListener {
                 toast("User Data Stored")
             })
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, ""+ it.message.toString(), Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun sendEmailVerification() {
-        val userEmail:String = emailEt.text.toString().trim()
+        progressDialog.setMessage("Send Verification")
         firebaseUser?.let {
             it.sendEmailVerification().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    progressDialog.dismiss()
                     val intent = Intent(this, EmailVerifyActivity::class.java)
                     intent.putExtra("EmailAddress", emailEt.text.toString().trim())
                     intent.putExtra("loginPassword", passEt.text.toString().trim())
@@ -257,6 +272,10 @@ class SignUpActivity : AppCompatActivity() {
                     finish()
                 }
             }
+                .addOnFailureListener {
+                    progressDialog.dismiss()
+                    toast("Verification Link Send failed")
+                }
         }
     }
 }

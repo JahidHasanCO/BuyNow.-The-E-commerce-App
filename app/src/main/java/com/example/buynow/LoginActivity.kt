@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -28,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var passwordError:TextView
 
 
-    private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
                     emailEt.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
 
                 }
-                else if (emailEt.text.matches(emailPattern.toRegex())) {
+                else if (Patterns.EMAIL_ADDRESS.matcher(emailEt.text).matches()) {
                     emailEt.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(applicationContext,R.drawable.ic_check), null)
                     emailError.visibility = View.GONE
                 }
@@ -86,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                if (emailEt.text.matches(emailPattern.toRegex())) {
+                if (Patterns.EMAIL_ADDRESS.matcher(emailEt.text).matches()) {
                     emailEt.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(applicationContext,R.drawable.ic_check), null)
                     emailError.visibility = View.GONE
                 }
@@ -133,7 +134,7 @@ class LoginActivity : AppCompatActivity() {
             emailError.text = "Email Can't be Empty"
             return
         }
-        if (!emailEt.text.matches(emailPattern.toRegex())) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailEt.text).matches()) {
             emailError.visibility = View.VISIBLE
             emailError.text = "Enter Valid Email"
             return

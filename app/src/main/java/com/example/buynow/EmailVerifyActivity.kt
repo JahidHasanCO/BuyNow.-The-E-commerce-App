@@ -9,9 +9,14 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+
 import com.example.buynow.Utils.Extensions.toast
-import com.example.buynow.Utils.FirebaseUtils
+
+import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
+import com.example.buynow.Utils.FirebaseUtils.firebaseDataBase
 import com.example.buynow.Utils.FirebaseUtils.firebaseUser
+import com.google.firebase.database.DatabaseReference
+
 
 
 class EmailVerifyActivity : AppCompatActivity() {
@@ -24,6 +29,8 @@ class EmailVerifyActivity : AppCompatActivity() {
     lateinit var title_emailVerifyPage:TextView
     lateinit var msg_emailVerifyPage:TextView
     lateinit var image_emailVerifyPage:ImageView
+
+    lateinit var dataRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +46,7 @@ class EmailVerifyActivity : AppCompatActivity() {
         EmailAddress = intent.getStringExtra("EmailAddress").toString()
         loginPassword = intent.getStringExtra("loginPassword").toString()
 
+        dataRef = firebaseDataBase.getReference("Users")
 
         verifyEmail()
 
@@ -55,10 +63,35 @@ class EmailVerifyActivity : AppCompatActivity() {
 
     private fun sendEmailVerification() {
 
-        firebaseUser?.let {
-            it.sendEmailVerification().addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    toast("New Link send your "+ EmailAddress + " Email Address.")
+        if(EmailAddress != null || EmailAddress != "") {
+
+            firebaseUser?.let {
+                it.sendEmailVerification().addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        toast("New Link send your " + EmailAddress + " Email Address.")
+                    }
+                }
+            }
+        }
+        else{
+            val database = firebaseDataBase.getReference("Users")
+            if (firebaseUser != null) {
+                database.child(firebaseUser.uid).get().addOnSuccessListener {
+                    if (it.exists()){
+
+                        val emailGetFromFirebase = it.child("userEmail").value
+
+                        firebaseUser.sendEmailVerification().addOnSuccessListener {
+                            toast("New Link send your " + emailGetFromFirebase + " Email Address.")
+                        }
+
+                    }else{
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }.addOnFailureListener {
+                    toast("Failed")
                 }
             }
         }
@@ -76,7 +109,7 @@ class EmailVerifyActivity : AppCompatActivity() {
 
             Handler().postDelayed({
 
-                FirebaseUtils.firebaseAuth.signInWithEmailAndPassword(EmailAddress, loginPassword)
+                firebaseAuth.signInWithEmailAndPassword(EmailAddress, loginPassword)
                     .addOnCompleteListener { signIn ->
                         if (signIn.isSuccessful) {
                             startActivity(Intent(this, HomeActivity::class.java))
