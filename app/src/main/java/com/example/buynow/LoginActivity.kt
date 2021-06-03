@@ -162,6 +162,13 @@ class LoginActivity : AppCompatActivity() {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
+
+                        loadingDialog.dismissDialog()
+                        startActivity(Intent(this, HomeActivity::class.java))
+                        toast("signed in successfully")
+                        finish()
+
+                        /*
                         if(FirebaseUtils.firebaseUser?.isEmailVerified == true){
                             startActivity(Intent(this, HomeActivity::class.java))
                             loadingDialog.dismissDialog()
@@ -175,6 +182,8 @@ class LoginActivity : AppCompatActivity() {
                             intent.putExtra("loginPassword", passEt.text.toString().trim())
                             startActivity(intent)
                         }
+
+                        */
 
                     } else {
                         toast("sign in failed")

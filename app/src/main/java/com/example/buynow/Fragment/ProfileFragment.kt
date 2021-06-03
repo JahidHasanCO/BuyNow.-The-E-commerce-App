@@ -9,38 +9,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.PopupMenu
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.cardview.widget.CardView
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
-import com.example.buynow.LoginActivity
-import com.example.buynow.Model.User
+
 
 import com.example.buynow.R
 import com.example.buynow.SettingsActivity
-import com.example.buynow.Utils.Extensions.toast
-import com.example.buynow.Utils.FirebaseUtils.firebaseAuth
 
-import com.example.buynow.Utils.FirebaseUtils.firebaseDataBase
-import com.example.buynow.Utils.FirebaseUtils.firebaseUser
 
 import com.example.buynow.Utils.FirebaseUtils.storageReference
 import com.example.buynow.loadingDialog
 import com.google.android.gms.tasks.Continuation
 
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.firestore.auth.User
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 
 import com.google.firebase.storage.UploadTask
+import com.squareup.okhttp.Dispatcher
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.util.*
 
 
 
 class ProfileFragment : Fragment() {
+
+    lateinit var animationView: LottieAnimationView
 
     lateinit var profileImage_profileFrag: CircleImageView
 
@@ -50,8 +56,17 @@ class ProfileFragment : Fragment() {
 
     lateinit var uploadImage_profileFrag:Button
     lateinit var profileName_profileFrag:TextView
+    lateinit var profileEmail_profileFrag:TextView
 
-    lateinit var dataRef: DatabaseReference
+
+    private val userCollectionRef = Firebase.firestore.collection("Users")
+    val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
+
+    lateinit var linearLayout2:LinearLayout
+    lateinit var linearLayout3:LinearLayout
+    lateinit var linearLayout4:LinearLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,11 +83,15 @@ class ProfileFragment : Fragment() {
         val settingCd_profileFrag = view.findViewById<CardView>(R.id.settingCd_profileFrag)
         uploadImage_profileFrag = view.findViewById(R.id.uploadImage_profileFrag)
         profileName_profileFrag = view.findViewById(R.id.profileName_profileFrag)
+        profileEmail_profileFrag = view.findViewById(R.id.profileEmail_profileFrag)
+        animationView = view.findViewById(R.id.animationView)
+        linearLayout2 = view.findViewById(R.id.linearLayout2)
+        linearLayout3 = view.findViewById(R.id.linearLayout3)
+        linearLayout4 = view.findViewById(R.id.linearLayout4)
 
-        dataRef = firebaseDataBase.getReference("Users")
+        hideLayout()
 
 
-        loadingDialog = loadingDialog(context as Activity)
 
         uploadImage_profileFrag.visibility = View.GONE
 
@@ -112,28 +131,50 @@ class ProfileFragment : Fragment() {
         return view
     }
 
-    private fun getUserData() {
+    private fun hideLayout(){
+        animationView.playAnimation()
+        animationView.loop(true)
+        linearLayout2.visibility = View.GONE
+        linearLayout3.visibility = View.GONE
+        linearLayout4.visibility = View.GONE
+        animationView.visibility = View.VISIBLE
+    }
+    private fun showLayout(){
+        animationView.pauseAnimation()
+        animationView.visibility = View.GONE
+        linearLayout2.visibility = View.VISIBLE
+        linearLayout3.visibility = View.VISIBLE
+        linearLayout4.visibility = View.VISIBLE
+    }
 
-        if (firebaseUser != null) {
-            dataRef.child(firebaseUser.uid).get().addOnSuccessListener {
-                if (it.exists()){
+    private fun getUserData() = CoroutineScope(Dispatchers.IO).launch {
+        try {
 
-                    val nameGetFromFirebase = it.child("userName").value
-                    profileName_profileFrag.text = "" + nameGetFromFirebase.toString()
+             val querySnapshot = userCollectionRef
+                 .document(firebaseAuth.uid.toString())
+                 .get().await()
 
-                    Glide.with(this)
-                        .load(it.child("userImage").value.toString())
-                        .placeholder(R.drawable.ic_profile)
-                        .into(profileImage_profileFrag)
+            val userImage:String = querySnapshot.data?.get("userImage").toString()
+            val userName:String = querySnapshot.data?.get("userName").toString()
+            val userEmail:String = querySnapshot.data?.get("userEmail").toString()
 
-                }else{
 
-                }
-            }.addOnFailureListener {
+            withContext(Dispatchers.Main){
 
+                profileName_profileFrag.text = userName
+                profileEmail_profileFrag.text = userEmail
+                Glide.with(this@ProfileFragment)
+                    .load(userImage)
+                    .placeholder(R.drawable.ic_profile)
+                    .into(profileImage_profileFrag)
+
+                showLayout()
             }
-        }
 
+
+        }catch (e:Exception){
+
+        }
     }
 
     private fun launchGallery() {
@@ -144,7 +185,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun uploadImage(){
-        loadingDialog.startLoadingDialog()
+
         if(filePath != null){
             val ref = storageReference?.child("profile_Image/" + UUID.randomUUID().toString())
             val uploadTask = ref?.putFile(filePath!!)
@@ -171,7 +212,7 @@ class ProfileFragment : Fragment() {
 
             }
         }else{
-            loadingDialog.dismissDialog()
+
             Toast.makeText(context, "Please Upload an Image", Toast.LENGTH_SHORT).show()
         }
     }
@@ -195,27 +236,22 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun addUploadRecordToDb(uri: String){
+    private fun addUploadRecordToDb(uri: String) = CoroutineScope(Dispatchers.IO).launch {
 
-        val df = firebaseDataBase.getReference("Users")
+        try {
 
-        val userHashmap: HashMap<String, Any>  =  HashMap()
+            userCollectionRef.document(firebaseAuth.uid.toString())
+                .update("userImage" , uri ).await()
 
-        userHashmap.put("userImage", uri)
+            withContext(Dispatchers.Main){
+                Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show()
+            }
 
-        if (firebaseUser != null) {
-            df.child(firebaseUser.uid)
-                .updateChildren(userHashmap)
-                .addOnSuccessListener {
-
-                    uploadImage_profileFrag.visibility = View.GONE
-                    loadingDialog.dismissDialog()
-                    Toast.makeText(context,"Profile Photo Uploaded",Toast.LENGTH_SHORT).show()
-
-                }
+        }catch (e:Exception){
+            withContext(Dispatchers.Main){
+                Toast.makeText(context, ""+e.message.toString(), Toast.LENGTH_SHORT).show()
+            }
         }
-
-
-
     }
+
 }
