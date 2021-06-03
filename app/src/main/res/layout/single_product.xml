@@ -8,6 +8,7 @@
     android:layout_marginRight="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="180dp"
@@ -100,6 +101,26 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/discount_singleProduct"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:background="@drawable/discount_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/discountTv_singleProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="-10%"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/metropolis_semibold"/>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

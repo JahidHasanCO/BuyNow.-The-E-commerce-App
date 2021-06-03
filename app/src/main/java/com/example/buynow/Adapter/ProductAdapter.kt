@@ -1,17 +1,18 @@
 package com.example.buynow.Adapter
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
+import android.widget.*
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.buynow.Model.Product
 import com.example.buynow.R
+import com.example.buynow.R.drawable.*
 
 class ProductAdapter(private val productList: ArrayList<Product>, context: Context): RecyclerView.Adapter<ProductAdapter.ViewHolder>()  {
 
@@ -23,6 +24,7 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
         return ViewHolder(productView)
     }
 
+
     override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
 
         val product: Product = productList[position]
@@ -33,10 +35,25 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
 
         Glide.with(ctx)
             .load(product.productImage)
-            .placeholder(R.drawable.bn)
+            .placeholder(bn)
             .into(holder.productImage_singleProduct)
 
 
+        if(product.productHave == true){
+            holder.discountTv_singleProduct.text = product.productDisCount
+            holder.discount_singleProduct.visibility = View.VISIBLE
+        }
+
+        if(product.productHave == false){
+
+            holder.discount_singleProduct.visibility = View.VISIBLE
+            holder.discountTv_singleProduct.text = "New"
+
+        }
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(ctx, "You Clicked "+ product.productName, Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -50,8 +67,10 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
         val productAddToFav_singleProduct:ImageView = itemView.findViewById(R.id.productAddToFav_singleProduct)
         val productRating_singleProduct:RatingBar = itemView.findViewById(R.id.productRating_singleProduct)
         val productBrandName_singleProduct:TextView = itemView.findViewById(R.id.productBrandName_singleProduct)
+        val discountTv_singleProduct:TextView = itemView.findViewById(R.id.discountTv_singleProduct)
         val productName_singleProduct:TextView = itemView.findViewById(R.id.productName_singleProduct)
         val productPrice_singleProduct:TextView = itemView.findViewById(R.id.productPrice_singleProduct)
+        val discount_singleProduct = itemView.findViewById<LinearLayout>(R.id.discount_singleProduct)
 
 
     }

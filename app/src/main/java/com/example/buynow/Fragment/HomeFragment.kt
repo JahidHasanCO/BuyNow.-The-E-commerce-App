@@ -31,8 +31,14 @@ class HomeFragment : Fragment() {
     val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     lateinit var newProductRecView: RecyclerView
+    lateinit var saleProductRecView: RecyclerView
+
     lateinit var productAdapter: ProductAdapter
+    lateinit var saleProductAdapter: ProductAdapter
+
     lateinit var productList: ArrayList<Product>
+    lateinit var saleProductList: ArrayList<Product>
+
     private val productRef = Firebase.firestore.collection("Products")
 
 
@@ -48,16 +54,23 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        productList = arrayListOf()
+        saleProductList = arrayListOf()
+        ProductLoadListner()
+
         newProductRecView = view.findViewById(R.id.newProductRecView)
         newProductRecView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
         newProductRecView.setHasFixedSize(true)
-
-        productList = arrayListOf()
-
         productAdapter = ProductAdapter(productList, activity as Context)
         newProductRecView.adapter = productAdapter
 
-        ProductLoadListner()
+        saleProductRecView = view.findViewById(R.id.saleProductRecView)
+        saleProductRecView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
+        saleProductRecView.setHasFixedSize(true)
+        saleProductAdapter = ProductAdapter(saleProductList, activity as Context)
+        saleProductRecView.adapter = saleProductAdapter
+
+
 
         return view
     }
@@ -69,7 +82,15 @@ class HomeFragment : Fragment() {
             val querySnapshot = productRef
                 .get().await()
             for (doc in querySnapshot.documents){
+
+                saleProductList.add(doc.toObject<Product>()!!)
                 productList.add(doc.toObject<Product>()!!)
+//                if(doc.toObject<Product>()!!.productHave == true){
+//                    saleProductList.add(doc.toObject<Product>()!!)
+//                }
+//                else{
+//                    productList.add(doc.toObject<Product>()!!)
+//                }
 
             }
 
