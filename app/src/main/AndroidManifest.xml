@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".EmailVerifyActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity"
+
+            />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity"></activity>
     </application>

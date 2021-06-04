@@ -7,139 +7,178 @@
     android:background="@color/background"
     tools:context=".Fragment.HomeFragment">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
-
-        <LinearLayout
-            android:id="@+id/linearLayout7"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/coverRecView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="480dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/metropolis_semibold"
-                            android:text="New"
-                            android:textColor="@color/black"
-                            android:textSize="25sp" />
-
-                        <androidx.legacy.widget.Space
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/metropolis_regular"
-                            android:gravity="center"
-                            android:text="View all"
-                            android:textColor="@color/black"
-                            android:textSize="12sp" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:fontFamily="@font/metropolis_regular"
-                    android:text="You’ve never seen it before!"
-                    android:textSize="11sp" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/newProductRecView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginRight="5dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-                </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+        </androidx.recyclerview.widget.RecyclerView>
 
                 <LinearLayout
+                    android:id="@+id/newLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/metropolis_semibold"
-                            android:text="Sale"
-                            android:textColor="@color/black"
-                            android:textSize="25sp" />
-
-                        <androidx.legacy.widget.Space
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/metropolis_regular"
-                            android:gravity="center"
-                            android:text="View all"
-                            android:textColor="@color/black"
-                            android:textSize="12sp" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:fontFamily="@font/metropolis_regular"
-                    android:text="Super summer sale"
-                    android:textSize="11sp" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/saleProductRecView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-                </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/coverRecView">
+
+                        <LinearLayout
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="@font/metropolis_semibold"
+                                            android:text="New"
+                                            android:textColor="@color/black"
+                                            android:textSize="25sp" />
+
+                                        <androidx.legacy.widget.Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:id="@+id/product_GroupViewAll"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="@font/metropolis_regular"
+                                            android:gravity="center"
+                                            android:text="View all"
+                                            android:textColor="@color/black"
+                                            android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:fontFamily="@font/metropolis_regular"
+                                    android:text="You Never seen Before"
+                                    android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/newRecView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/saleLayout"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/newLayout"
+
+                    >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="@font/metropolis_semibold"
+                                            android:text="Sale"
+                                            android:textColor="@color/black"
+                                            android:textSize="25sp" />
+
+                                        <androidx.legacy.widget.Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:id="@+id/saleProduct_ViewAll"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="@font/metropolis_regular"
+                                            android:gravity="center"
+                                            android:text="View all"
+                                            android:textColor="@color/black"
+                                            android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:fontFamily="@font/metropolis_regular"
+                                    android:text="You Never seen Before"
+                                    android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/saleRecView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:visibility="gone"
+                    android:id="@+id/animationView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_rawRes="@raw/circle_progress" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>

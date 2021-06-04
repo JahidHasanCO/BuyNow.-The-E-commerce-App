@@ -1,5 +1,6 @@
 package com.example.buynow
 
+import android.app.StatusBarManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,7 +15,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        
 
         bottomNavigationView = findViewById(R.id.bottomNavMenu)
         bottomNavigationView.setOnNavigationItemSelectedListener(this)

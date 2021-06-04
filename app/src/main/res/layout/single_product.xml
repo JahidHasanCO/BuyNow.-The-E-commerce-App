@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bn" />
+            />
 
     </androidx.cardview.widget.CardView>
 
@@ -60,12 +60,13 @@
 
         <RatingBar
             android:id="@+id/productRating_singleProduct"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:numStars="5"
-            android:rating="3"
+            android:rating="5"
             android:scaleX=".4"
             android:scaleY=".4"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:transformPivotX="0dp"
             android:transformPivotY="15dp" />
 
@@ -76,7 +77,7 @@
             android:fontFamily="@font/metropolis_light"
             android:maxLines="1"
             android:text="Brand Name"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/productName_singleProduct"
@@ -85,7 +86,7 @@
             android:fontFamily="@font/metropolis_regular"
             android:maxLines="1"
             android:text="Product Name"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/productPrice_singleProduct"
@@ -96,7 +97,7 @@
             android:maxLines="1"
             android:text="Product Price"
             android:textColor="@color/primary"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 
