@@ -3,6 +3,7 @@ package com.example.buynow.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.buynow.Model.Product
+import com.example.buynow.ProductDetailsActivity
 import com.example.buynow.R
 import com.example.buynow.R.drawable.*
 
@@ -52,7 +54,7 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
         }
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(ctx, "You Clicked "+ product.productName, Toast.LENGTH_SHORT).show()
+            goDetailsPage(position)
         }
 
     }
@@ -73,5 +75,12 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
         val discount_singleProduct = itemView.findViewById<LinearLayout>(R.id.discount_singleProduct)
 
 
+    }
+
+    private fun goDetailsPage(position: Int) {
+        val intent = Intent(ctx , ProductDetailsActivity::class.java)
+        intent.putExtra("ProductIndex", position)
+        intent.putExtra("ProductFrom", "Cover")
+        ctx.startActivity(intent)
     }
 }
