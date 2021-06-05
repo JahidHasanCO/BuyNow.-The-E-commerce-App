@@ -3,25 +3,34 @@ package com.example.buynow
 import android.app.StatusBarManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.buynow.Fragment.*
+import com.example.buynow.db.CartViewModel
+import com.example.buynow.db.ProductEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     lateinit var bottomNavigationView:BottomNavigationView
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        
+
 
         bottomNavigationView = findViewById(R.id.bottomNavMenu)
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
 
         supportFragmentManager.beginTransaction().replace(R.id.nav_fragment, HomeFragment() ).commit()
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
