@@ -1,21 +1,23 @@
 package com.example.buynow.Fragment
 
-import android.app.Activity
-import android.app.Application
 import android.content.Context
 import android.os.Bundle
+
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.LiveData
+
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+
 import androidx.lifecycle.ViewModelProviders
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.buynow.Adapter.CartAdapter
 import com.example.buynow.Adapter.CartItemClickAdapter
 
@@ -24,15 +26,14 @@ import com.example.buynow.R
 
 import com.example.buynow.db.CartViewModel
 import com.example.buynow.db.ProductEntity
-import java.io.ObjectOutputStream
-import kotlin.math.log
-
 
 class BagFragment : Fragment(), CartItemClickAdapter {
 
     lateinit var cartRecView:RecyclerView
     lateinit var cartAdapter: CartAdapter
-
+    lateinit var animationView: LottieAnimationView
+    lateinit var totalPriceBagFrag:TextView
+    lateinit var Item: ArrayList<ProductEntity>
      var sum:Int = 0
 
     private lateinit var cartViewModel: CartViewModel
@@ -50,6 +51,19 @@ class BagFragment : Fragment(), CartItemClickAdapter {
         val view = inflater.inflate(R.layout.fragment_bag, container, false)
 
         cartRecView = view.findViewById(R.id.cartRecView)
+        animationView = view.findViewById(R.id.animationViewCartPage)
+        totalPriceBagFrag = view.findViewById(R.id.totalPriceBagFrag)
+        val bottomCartLayout:LinearLayout = view.findViewById(R.id.bottomCartLayout)
+        val emptyBagMsgLayout:LinearLayout = view.findViewById(R.id.emptyBagMsgLayout)
+        val MybagText:TextView = view.findViewById(R.id.MybagText)
+        Item = arrayListOf()
+
+
+        animationView.playAnimation()
+        animationView.loop(true)
+        bottomCartLayout.visibility = View.GONE
+        MybagText.visibility = View.GONE
+        emptyBagMsgLayout.visibility = View.VISIBLE
 
 
         cartRecView.layoutManager = LinearLayoutManager(context)
@@ -62,19 +76,33 @@ class BagFragment : Fragment(), CartItemClickAdapter {
         cartViewModel.allproducts.observe(viewLifecycleOwner, Observer {List ->
             List?.let {
                 cartAdapter.updateList(it)
-
+                Item.clear()
+                sum = 0
+                Item.addAll(it)
             }
 
-            List?.let {
-                it.forEach {
-                    sum += it.price
-                }
+            if (List.size == 0){
+                animationView.playAnimation()
+                animationView.loop(true)
+                bottomCartLayout.visibility = View.GONE
+                MybagText.visibility = View.GONE
+                emptyBagMsgLayout.visibility = View.VISIBLE
 
             }
+            else{
+                emptyBagMsgLayout.visibility = View.GONE
+                bottomCartLayout.visibility = View.VISIBLE
+                MybagText.visibility = View.VISIBLE
+                animationView.pauseAnimation()
+            }
 
+            Item.forEach {
+                sum += it.price
+            }
+            totalPriceBagFrag.text = "$" + sum
         })
 
-        Toast.makeText(context, "Total Price: "+sum, Toast.LENGTH_SHORT).show()
+
 
 
         return view
@@ -82,6 +110,7 @@ class BagFragment : Fragment(), CartItemClickAdapter {
 
     override fun onItemDeleteClick(product: ProductEntity) {
         cartViewModel.deleteCart(product)
+        Toast.makeText(context,"Removed From Bag",Toast.LENGTH_SHORT).show()
     }
 
     override fun onItemUpdateClick(product: ProductEntity) {

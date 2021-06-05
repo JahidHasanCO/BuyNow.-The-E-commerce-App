@@ -29,6 +29,8 @@ import java.nio.channels.AsynchronousFileChannel.open
 
 class HomeFragment : Fragment() {
 
+//    NewProducts.json
+
     lateinit var coverRecView:RecyclerView
     lateinit var newRecView:RecyclerView
     lateinit var saleRecView:RecyclerView
@@ -77,7 +79,7 @@ class HomeFragment : Fragment() {
         hideLayout()
 
         setCoverData()
-
+        setNewProductData()
 
         coverRecView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
         coverRecView.setHasFixedSize(true)
@@ -147,7 +149,6 @@ class HomeFragment : Fragment() {
         coverD.forEachIndexed { idx, person ->
 
             coverProduct.add(person)
-            newProduct.add(person)
             saleProduct.add(person)
 
         }
@@ -155,7 +156,28 @@ class HomeFragment : Fragment() {
 
     }
 
+    private fun setNewProductData() {
 
+        val jsonFileString = context?.let {
+
+            getJsonData(it, "NewProducts.json")
+        }
+        val gson = Gson()
+
+        val listCoverType = object : TypeToken<List<Product>>() {}.type
+
+        var coverD: List<Product> = gson.fromJson(jsonFileString, listCoverType)
+
+        coverD.forEachIndexed { idx, person ->
+
+
+            newProduct.add(person)
+
+
+        }
+
+
+    }
 
 }
 

@@ -80,7 +80,7 @@ class ProductAdapter(private val productList: ArrayList<Product>, context: Conte
     private fun goDetailsPage(position: Int) {
         val intent = Intent(ctx , ProductDetailsActivity::class.java)
         intent.putExtra("ProductIndex", position)
-        intent.putExtra("ProductFrom", "Cover")
+        intent.putExtra("ProductFrom", "New")
         ctx.startActivity(intent)
     }
 }

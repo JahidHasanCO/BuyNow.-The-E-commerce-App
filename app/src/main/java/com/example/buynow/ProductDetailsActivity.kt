@@ -3,11 +3,12 @@ package com.example.buynow
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.view.WindowManager
 import android.widget.*
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.text.set
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,7 @@ import com.example.buynow.Model.Product
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.db.CartViewModel
 import com.example.buynow.db.ProductEntity
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -53,6 +55,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         getWindow()?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+
         productIndex = intent.getIntExtra("ProductIndex", -1)
         ProductFrom = intent.getStringExtra("ProductFrom").toString()
 
@@ -66,6 +69,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         RecomRecView_ProductDetailsPage = findViewById(R.id.RecomRecView_ProductDetailsPage)
         backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
         val addToCart_ProductDetailsPage: Button = findViewById(R.id.addToCart_ProductDetailsPage)
+
 
 
         newProduct = arrayListOf()
@@ -85,7 +89,42 @@ class ProductDetailsActivity : AppCompatActivity() {
         }
 
         addToCart_ProductDetailsPage.setOnClickListener {
-            addProductToBag()
+
+            val bottomSheetDialod = BottomSheetDialog(
+                this, R.style.BottomSheetDialogTheme
+            )
+
+            val bottomSheetView = LayoutInflater.from(applicationContext).inflate(
+                R.layout.fragment_add_to_bag,
+                findViewById<ConstraintLayout>(R.id.bottomSheet)
+            )
+
+            bottomSheetView.findViewById<View>(R.id.addToCart_BottomSheet).setOnClickListener {
+
+                pPrice *= bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
+                    .toInt()
+                addProductToBag()
+                bottomSheetDialod.dismiss()
+            }
+
+            bottomSheetView.findViewById<LinearLayout>(R.id.minusLayout).setOnClickListener {
+                if(bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
+                        .toInt() > 1){
+                    qua--
+                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).setText(qua.toString())
+                }
+            }
+
+            bottomSheetView.findViewById<LinearLayout>(R.id.plusLayout).setOnClickListener {
+                if(bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).text.toString()
+                        .toInt() < 10){
+                    qua++
+                    bottomSheetView.findViewById<EditText>(R.id.quantityEtBottom).setText(qua.toString())
+                }
+            }
+
+            bottomSheetDialod.setContentView(bottomSheetView)
+            bottomSheetDialod.show()
         }
 
     }
@@ -119,6 +158,10 @@ class ProductDetailsActivity : AppCompatActivity() {
         if (ProductFrom.equals("Cover")) {
             fileJson = "CoverProducts.json"
         }
+        if (ProductFrom.equals("New")) {
+            fileJson = "NewProducts.json"
+        }
+
 
         val jsonFileString = this?.let {
 
@@ -152,9 +195,20 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     private fun setRecData() {
 
+
+        var fileJson: String = ""
+
+        if (ProductFrom.equals("Cover")) {
+            fileJson = "NewProducts.json"
+        }
+        if (ProductFrom.equals("New")) {
+            fileJson = "CoverProducts.json"
+        }
+
+
         val jsonFileString = this?.let {
 
-            getJsonData(it, "CoverProducts.json")
+            getJsonData(it, fileJson)
         }
         val gson = Gson()
 

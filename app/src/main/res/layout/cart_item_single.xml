@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:id="@+id/cartMore"
-                    android:src="@drawable/ic_baseline_more_vert_24"
+                    android:src="@drawable/ic_baseline_clear_24"
 
                     />
 
