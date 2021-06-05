@@ -9,4 +9,10 @@ class CartRepo(private val productDao: ProductDao) {
     suspend fun insert(product: ProductEntity) {
         productDao.insert(product)
     }
+    suspend fun delete(product: ProductEntity) {
+        productDao.delete(product)
+    }
+    suspend fun update(product: ProductEntity) {
+        productDao.update(product)
+    }
 }

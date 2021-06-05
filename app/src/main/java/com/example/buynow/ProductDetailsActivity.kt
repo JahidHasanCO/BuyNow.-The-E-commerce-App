@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
 import android.widget.*
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -93,16 +94,8 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         cartViewModel = ViewModelProviders.of(this).get(CartViewModel::class.java)
 
-        cartViewModel.allproducts.observe(this, Observer { items ->
-
-            if (items.isEmpty()){
-                cartViewModel.insert(ProductEntity(pName, qua, pPrice, pPid, pImage))
-            }
-
-            toast("Add to Bag Successfully")
-
-            Log.d(TAG, "ITEMS: $items")
-        })
+        cartViewModel.insert(ProductEntity(pName, qua, pPrice, pPid, pImage))
+        toast("Add to Bag Successfully")
     }
 
     fun getJsonData(context: Context, fileName: String): String? {
