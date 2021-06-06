@@ -89,7 +89,7 @@ class VisualSearchActivity : AppCompatActivity() {
             startActivityForResult(intent,PICK_IMAGE_REQUEST)
 
             bottomSheet(townList)
-
+            
         }
 
 

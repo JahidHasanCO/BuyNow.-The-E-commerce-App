@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/background"
     android:layout_marginLeft="5dp"
@@ -11,20 +11,19 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/productImage_predictProduct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
 
@@ -50,23 +49,23 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="110dp"
         android:background="@color/background"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RatingBar
             android:id="@+id/productRating_predictProduct"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:numStars="5"
             android:rating="5"
             android:scaleX=".4"
             android:scaleY=".4"
-            style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:transformPivotX="0dp"
             android:transformPivotY="15dp" />
 
