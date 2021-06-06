@@ -76,5 +76,58 @@
     "productImage": "https://image.freepik.com/free-photo/handsome-smiling-man-white-clothes-looking-pointing-finger-left-banner-standing-yellow-background_1258-40802.jpg",
     "productCategory": "Clothing",
     "productNote": "HERE&NOW"
+  },
+
+  {
+    "productName": "Yamaha F 310p Acoustic Guitar",
+    "productId": "7",
+    "productPrice": "32",
+    "productDes": "Maroon printed T-shirt, has a round neck, and short sleeves\n\nSize & Fit\nThe model (height 6') is wearing a size M\n\nMaterial & Care\nMaterial: 100% cotton\nMachine Wash",
+    "productRating": 4.5,
+    "productDisCount": "",
+    "productHave": false,
+    "productBrand": "Yamaha",
+    "productImage": "https://s3-ap-southeast-1.amazonaws.com/media.evaly.com.bd/media/images/eab94ee10b4b-yamaha-f310-acoustic-guitar-wooden-china-1.jpg",
+    "productCategory": "acoustic guitar",
+    "productNote": "Yamaha"
+  },
+  {
+    "productName": "Custom Made New Accoustic Guitar - Natural",
+    "productId": "8",
+    "productPrice": "36",
+    "productDes": "Maroon printed T-shirt, has a round neck, and short sleeves\n\nSize & Fit\nThe model (height 6') is wearing a size M\n\nMaterial & Care\nMaterial: 100% cotton\nMachine Wash",
+    "productRating": 3,
+    "productDisCount": "10%",
+    "productHave": true,
+    "productBrand": "GSBD",
+    "productImage": "https://static-01.daraz.com.bd/p/3c35318b6c924e65480d8979bbd36d53.jpg",
+    "productCategory": "acoustic guitar",
+    "productNote": "GSBD"
+  },
+  {
+    "productName": "Acoustic guitar & semi electric guitar",
+    "productId": "9",
+    "productPrice": "34",
+    "productDes": "Maroon printed T-shirt, has a round neck, and short sleeves\n\nSize & Fit\nThe model (height 6') is wearing a size M\n\nMaterial & Care\nMaterial: 100% cotton\nMachine Wash",
+    "productRating": 4.0,
+    "productDisCount": "15%",
+    "productHave": true,
+    "productBrand": "GSBD",
+    "productImage": "https://static-01.daraz.com.bd/p/0f819b544621e227beae14afcf74b8c4.jpg",
+    "productCategory": "acoustic guitar",
+    "productNote": "GSBD"
+  },
+  {
+    "productName": "Acoustic Guitar - 41\" - Sandy Brown",
+    "productId": "10",
+    "productPrice": "42",
+    "productDes": "Maroon printed T-shirt, has a round neck, and short sleeves\n\nSize & Fit\nThe model (height 6') is wearing a size M\n\nMaterial & Care\nMaterial: 100% cotton\nMachine Wash",
+    "productRating": 4.5,
+    "productDisCount": "",
+    "productHave": false,
+    "productBrand": "DEVISER",
+    "productImage": "https://static-01.daraz.com.bd/original/fd3e3987f865edd9945337188f4573ae.jpg",
+    "productCategory": "acoustic guitar",
+    "productNote": "DEVISER"
   }
 ]

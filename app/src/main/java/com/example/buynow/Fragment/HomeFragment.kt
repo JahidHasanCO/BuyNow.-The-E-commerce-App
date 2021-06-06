@@ -2,12 +2,14 @@ package com.example.buynow.Fragment
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -16,10 +18,12 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.buynow.Adapter.CoverProductAdapter
 import com.example.buynow.Adapter.ProductAdapter
 import com.example.buynow.Adapter.SaleProductAdapter
+import com.example.buynow.EmailVerifyActivity
 
 import com.example.buynow.Model.Product
 
 import com.example.buynow.R
+import com.example.buynow.VisualSearchActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -75,6 +79,7 @@ class HomeFragment : Fragment() {
         newLayout = view.findViewById(R.id.newLayout)
         saleLayout = view.findViewById(R.id.saleLayout)
         animationView = view.findViewById(R.id.animationView)
+        val visualSearchBtn_homePage:ImageView = view.findViewById(R.id.visualSearchBtn_homePage)
 
         hideLayout()
 
@@ -98,6 +103,11 @@ class HomeFragment : Fragment() {
         saleRecView.setHasFixedSize(true)
         saleProductAdapter = SaleProductAdapter(saleProduct, activity as Context )
         saleRecView.adapter = saleProductAdapter
+
+
+        visualSearchBtn_homePage.setOnClickListener {
+            startActivity(Intent(context,VisualSearchActivity::class.java))
+        }
 
         showLayout()
 
