@@ -13,6 +13,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        app:cardBackgroundColor="@color/backgroundAd"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,12 +43,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="15dp"
-            android:src="@drawable/ic_fav" />
+            android:src="@drawable/ic_fav"
+            app:tint="@color/mainText" />
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:paddingRight="10dp"
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="110dp"
@@ -74,6 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/metropolis_light"
+            android:textColor="@color/textAd"
             android:maxLines="1"
             android:text="Brand Name"
             android:textSize="13sp" />
@@ -83,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/metropolis_regular"
+            android:textColor="@color/mainText"
             android:maxLines="1"
             android:text="Product Name"
             android:textSize="15sp" />

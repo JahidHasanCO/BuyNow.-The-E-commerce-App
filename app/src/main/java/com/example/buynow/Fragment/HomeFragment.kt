@@ -18,7 +18,6 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.buynow.Adapter.CoverProductAdapter
 import com.example.buynow.Adapter.ProductAdapter
 import com.example.buynow.Adapter.SaleProductAdapter
-import com.example.buynow.EmailVerifyActivity
 
 import com.example.buynow.Model.Product
 
@@ -27,8 +26,6 @@ import com.example.buynow.VisualSearchActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
-import java.io.InputStream
-import java.nio.channels.AsynchronousFileChannel.open
 
 
 class HomeFragment : Fragment() {
@@ -51,10 +48,7 @@ class HomeFragment : Fragment() {
     lateinit var newLayout:LinearLayout
     lateinit var saleLayout:LinearLayout
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,7 +57,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        getActivity()?.getWindow()?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
 
 
@@ -72,13 +66,15 @@ class HomeFragment : Fragment() {
         saleProduct = arrayListOf()
 
 
-
         coverRecView = view.findViewById(R.id.coverRecView)
         newRecView = view.findViewById(R.id.newRecView)
         saleRecView = view.findViewById(R.id.saleRecView)
         newLayout = view.findViewById(R.id.newLayout)
         saleLayout = view.findViewById(R.id.saleLayout)
         animationView = view.findViewById(R.id.animationView)
+
+
+
         val visualSearchBtn_homePage:ImageView = view.findViewById(R.id.visualSearchBtn_homePage)
 
         hideLayout()
@@ -105,11 +101,18 @@ class HomeFragment : Fragment() {
         saleRecView.adapter = saleProductAdapter
 
 
+
         visualSearchBtn_homePage.setOnClickListener {
             startActivity(Intent(context,VisualSearchActivity::class.java))
         }
 
+
+
+
+
         showLayout()
+
+
 
         return view
     }

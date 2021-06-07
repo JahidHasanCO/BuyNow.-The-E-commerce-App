@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:fontFamily="@font/metropolis_bold"
         android:text="Login"
-        android:textColor="@color/black"
+        android:textColor="@color/mainText"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
             android:paddingLeft="20dp"
             android:drawableRight="@null"
             android:paddingRight="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:background="@drawable/edit_text_bg"
             android:fontFamily="@font/metropolis_regular"
             android:hint="Email"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="15sp"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:drawableRight="@null"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
@@ -92,7 +92,7 @@
             android:text="Forgotten Password?"
             android:layout_marginTop="10dp"
             android:gravity="right"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/metropolis_regular"
                 android:text="Don't Have an Account? "
-                android:textColor="@color/black"
+                android:textColor="@color/mainText"
                 android:textSize="14sp"
                 />
             <TextView

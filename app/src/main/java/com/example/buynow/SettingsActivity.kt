@@ -7,13 +7,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.buynow.Utils.Extensions.toast
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -41,7 +40,16 @@ class SettingsActivity : AppCompatActivity() {
         EmailEt_SettingsPage = findViewById(R.id.EmailEt_SettingsPage)
         saveSetting_SettingsBtn = findViewById(R.id.saveSetting_SettingsBtn)
         val backIv_ProfileFrag:ImageView = findViewById(R.id.backIv_ProfileFrag)
+        val darkMode_Switch: SwitchMaterial = findViewById(R.id.darkMode_Switch)
 
+        darkMode_Switch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(buttonView.isChecked){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
         backIv_ProfileFrag.setOnClickListener {
             onBackPressed()
         }

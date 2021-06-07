@@ -17,19 +17,13 @@
         android:fontFamily="@font/metropolis_semibold"
         android:gravity="center"
         android:text="Quantity"
-        android:textColor="@color/black"
+        android:textColor="@color/mainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.4dp"
-        android:background="@color/gray"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout8"
@@ -54,7 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:src="@drawable/ic_baseline_remove_24" />
+                android:src="@drawable/ic_baseline_remove_24"
+                app:tint="@color/mainText"
+                />
 
         </LinearLayout>
 
@@ -67,7 +63,7 @@
             android:gravity="center"
             android:inputType="numberDecimal"
             android:text="1"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -83,7 +79,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:src="@drawable/ic_baseline_add_24" />
+                android:src="@drawable/ic_baseline_add_24"
+                app:tint="@color/mainText"
+                />
 
         </LinearLayout>
     </LinearLayout>

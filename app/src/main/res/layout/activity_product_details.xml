@@ -90,7 +90,8 @@
                         android:layout_weight="3"
                         android:fontFamily="@font/metropolis_semibold"
                         android:text=""
-                        android:textColor="@color/black"
+                        android:maxLines="2"
+                        android:textColor="@color/mainText"
                         android:textSize="25sp" />
 
                     <TextView
@@ -101,7 +102,7 @@
                         android:fontFamily="@font/metropolis_semibold"
                         android:gravity="end"
                         android:text=""
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="25sp" />
                 </LinearLayout>
 
@@ -114,7 +115,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/metropolis_regular"
                     android:text=""
-                    android:textColor="@color/black"
+                    android:textColor="@color/mainText"
                     android:textSize="13sp" />
 
                 <RatingBar
@@ -138,7 +139,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/metropolis_regular"
                     android:text="Product Details"
-                    android:textColor="@color/black"
+                    android:textColor="@color/mainText"
                     android:textSize="15sp" />
 
                 <TextView
@@ -148,6 +149,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
+                    android:textColor="@color/textAd"
                     android:fontFamily="@font/metropolis_regular"
                     android:maxLines="5"
                     android:text=""
@@ -174,7 +176,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/metropolis_regular"
                             android:text="Shipping info"
-                            android:textColor="@color/black"
+                            android:textColor="@color/mainText"
                             android:textSize="16sp" />
 
                         <TextView
@@ -183,6 +185,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/metropolis_regular"
                             android:text="Add Your Cart"
+                            android:textColor="@color/textAd"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -212,7 +215,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/metropolis_regular"
                             android:text="Ratings"
-                            android:textColor="@color/black"
+                            android:textColor="@color/mainText"
                             android:textSize="16sp" />
 
                         <TextView
@@ -264,7 +267,7 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/metropolis_semibold"
                             android:text="You can also Like this "
-                            android:textColor="@color/black"
+                            android:textColor="@color/mainText"
                             android:textSize="25sp" />
 
                         <androidx.legacy.widget.Space
@@ -279,7 +282,7 @@
                             android:fontFamily="@font/metropolis_regular"
                             android:gravity="center"
                             android:text="View all"
-                            android:textColor="@color/black"
+                            android:textColor="@color/mainText"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -292,6 +295,7 @@
                         android:layout_marginRight="10dp"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="Recommended"
+                        android:textColor="@color/textAd"
                         android:textSize="11sp" />
 
                 </LinearLayout>
@@ -315,7 +319,7 @@
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/backgroundAd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

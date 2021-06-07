@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/metropolis_regular"
             android:text="My Profile"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,9 @@
             android:id="@+id/searchIv_ProfileFrag"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:src="@drawable/ic_search" />
+            android:src="@drawable/ic_search"
+            app:tint="@color/mainText"
+            />
 
     </LinearLayout>
 
@@ -68,6 +70,7 @@
             android:layout_height="70dp"
             android:src="@drawable/ic_profile"
             app:civ_border_color="@color/black"
+            app:tint="@color/mainText"
              />
 
         <LinearLayout
@@ -83,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/metropolis_regular"
                 android:text="Profile Name"
-                android:textColor="@color/black"
+                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <TextView
@@ -92,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/metropolis_regular"
                 android:text="Profile Email"
+                android:textColor="@color/textAd"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -145,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="My Orders"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -154,6 +158,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="you have no orders"
+                        android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -193,7 +198,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="Shipping addresses"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -201,7 +206,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="3 ddresses"
+                        android:text="3 dresses"
+                        android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -242,7 +248,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="Payment methods"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -250,6 +256,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
+                        android:textColor="@color/textAd"
                         android:text="You Have no cart"
                         android:textSize="12sp" />
 
@@ -289,8 +296,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="Promocodes"
-                        android:textColor="@color/black"
+                        android:text="Promo codes"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -298,7 +305,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="You have special promocodes"
+                        android:textColor="@color/textAd"
+                        android:text="You have special promo codes"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -338,7 +346,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="My reviews"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -346,6 +354,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
+                        android:textColor="@color/textAd"
                         android:text="You Have no review"
                         android:textSize="12sp" />
 
@@ -388,7 +397,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/metropolis_regular"
                         android:text="Settings"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="16sp" />
 
                     <TextView
@@ -396,6 +405,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
+                        android:textColor="@color/textAd"
                         android:text="Notifications, password"
                         android:textSize="12sp" />
 

@@ -2,12 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainScrollView_homeFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".Fragment.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/MainLayout_homeFrag"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -56,7 +58,7 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/metropolis_semibold"
                         android:text="New"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="25sp" />
 
                     <androidx.legacy.widget.Space
@@ -71,7 +73,7 @@
                         android:fontFamily="@font/metropolis_regular"
                         android:gravity="center"
                         android:text="View all"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -84,6 +86,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/metropolis_regular"
                     android:text="You Never seen Before"
+                    android:textColor="@color/textAd"
                     android:textSize="11sp" />
 
             </LinearLayout>
@@ -129,7 +132,7 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/metropolis_semibold"
                         android:text="Sale"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="25sp" />
 
                     <androidx.legacy.widget.Space
@@ -144,7 +147,7 @@
                         android:fontFamily="@font/metropolis_regular"
                         android:gravity="center"
                         android:text="View all"
-                        android:textColor="@color/black"
+                        android:textColor="@color/mainText"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -157,6 +160,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/metropolis_regular"
                     android:text="You Never seen Before"
+                    android:textColor="@color/textAd"
                     android:textSize="11sp" />
 
             </LinearLayout>

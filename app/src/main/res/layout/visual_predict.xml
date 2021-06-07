@@ -17,7 +17,7 @@
         android:fontFamily="@font/metropolis_semibold"
         android:gravity="center"
         android:text="Visual Search"
-        android:textColor="@color/black"
+        android:textColor="@color/mainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +29,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="30dp"
+        android:background="@color/backgroundAd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -38,7 +39,7 @@
             android:id="@+id/imageView_VisualPredict"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
              />
 
     </androidx.cardview.widget.CardView>

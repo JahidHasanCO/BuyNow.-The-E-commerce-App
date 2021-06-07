@@ -37,7 +37,7 @@
             android:fontFamily="@font/metropolis_bold"
             android:gravity="center"
             android:text="Verify Your Email"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="20dp" />
 
         <TextView
@@ -47,6 +47,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/metropolis_regular"
             android:gravity="center"
+            android:textColor="@color/textAd"
             android:text="Verify Your Email"
             android:textSize="15dp" />
 
@@ -82,7 +83,7 @@
             android:text="Resend E-mail"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/metropolis_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:gravity="center"
             />
     </LinearLayout>

@@ -46,6 +46,7 @@ class VisualSearchActivity : AppCompatActivity() {
     lateinit var bottomSheetView:View
 
     private val PICK_IMAGE_REQUEST = 71
+    private val CAMERA_IMAGE_REQUEST = 42
     var predictName: String = ""
     var max: Int = -1
     private var filePath: Uri? = null

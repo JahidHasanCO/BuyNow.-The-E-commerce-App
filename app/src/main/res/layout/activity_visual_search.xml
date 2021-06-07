@@ -25,7 +25,9 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_back" />
+            android:src="@drawable/ic_back"
+            app:tint="@color/mainText"
+            />
 
         <TextView
             android:id="@+id/textView2"
@@ -36,7 +38,7 @@
             android:fontFamily="@font/metropolis_regular"
             android:gravity="center"
             android:text="Visual Search"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +81,8 @@
             android:textColor="@color/white"
             android:textSize="25sp" />
 
+
+
         <Button
             android:id="@+id/takeAPhotoBtn_visualSearch"
             android:layout_width="match_parent"
@@ -89,15 +93,22 @@
             android:background="@drawable/btn_bg"
             android:text="Take a Photo" />
 
-        <Button
-            android:id="@+id/uploadAPhotoBtn_visualSearch"
+        <LinearLayout
+            android:background="@drawable/strock_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
+            >
+
+        <Button
+            android:id="@+id/uploadAPhotoBtn_visualSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/btn_bg2"
             android:text="Upload a Photo" />
+        </LinearLayout>
     </LinearLayout>
 
 

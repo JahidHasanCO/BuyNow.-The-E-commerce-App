@@ -24,7 +24,9 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_back" />
+            android:src="@drawable/ic_back"
+            app:tint="@color/mainText"
+            />
 
         <TextView
             android:id="@+id/textView2"
@@ -35,7 +37,7 @@
             android:fontFamily="@font/metropolis_regular"
             android:gravity="center"
             android:text="Visual Search Result"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +65,7 @@
             android:fontFamily="@font/metropolis_semibold"
             android:maxLines="2"
             android:text="Name"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="22sp" />
 
         <TextView
@@ -75,7 +77,7 @@
             android:fontFamily="@font/metropolis_light"
             android:maxLines="2"
             android:text="similar results"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="14sp" />
     </LinearLayout>
 

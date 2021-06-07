@@ -25,7 +25,9 @@
             android:id="@+id/backIv_ProfileFrag"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_back" />
+            android:src="@drawable/ic_back"
+            app:tint="@color/mainText"
+            />
 
         <androidx.legacy.widget.Space
             android:layout_weight="1"
@@ -35,7 +37,9 @@
             android:id="@+id/searchIv_ProfileFrag"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_search" />
+            android:src="@drawable/ic_search"
+            app:tint="@color/mainText"
+            />
 
     </LinearLayout>
 
@@ -56,11 +60,43 @@
             android:layout_marginRight="10dp"
             android:fontFamily="@font/metropolis_regular"
             android:text="Settings"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="Dark Mode"
+            android:textColor="@color/mainText"
+            android:textSize="15sp"
+             />
+
+            <androidx.legacy.widget.Space
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/darkMode_Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
+
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +105,7 @@
             android:layout_marginRight="10dp"
             android:fontFamily="@font/metropolis_regular"
             android:text="Personal Information"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +123,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:background="@drawable/edit_text_bg"
             android:fontFamily="@font/metropolis_regular"
             android:hint="Full Name"
@@ -105,7 +141,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:background="@drawable/edit_text_bg"
             android:fontFamily="@font/metropolis_regular"
             android:hint="Email"
