@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\predicted_result_single.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\predicted_result_single.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_email_verify.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_email_verify.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shop.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_shop.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_fav.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_fav.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_visual_result.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_visual_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_shiping_address.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_shiping_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\cart_item_single.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\cart_item_single.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\visual_predict.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\visual_predict.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_bag.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_bag.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_add_to_bag.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\fragment_add_to_bag.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash_screen.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_splash_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_add_address.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_add_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\single_product.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\single_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\cover_single.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\cover_single.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_product_details.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_product_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_visual_search.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_visual_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\vdjso\\StudioProjects\\BuyNow-App\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    }
+]

@@ -1,0 +1,54 @@
+[
+  {
+  "productName": "Printed Oval Sunglasses",
+  "productId": "1",
+  "productPrice": "39",
+  "productDes": "Blue printed woven maxi dress, has a V-neck, short sleeves, flared hem\n\nSize & Fit\nSemi-fit\nThe model (height 5'8\") is wearing a size S\n\nMaterial & Care\nPolyester\nMachine-wash\n\n",
+  "productRating": 4.7,
+  "productDisCount": "12%",
+  "productHave": true,
+  "productBrand": "Tommy Hilfiger",
+  "productImage": "https://image.freepik.com/free-photo/full-length-shot-glad-curly-woman-striped-pants-jumping-purple-wall-indoor-portrait-wonderful-girl-sunglasses-fooling-around_197531-5125.jpg",
+  "productCategory": "Clothing",
+  "productNote": "Tommy Hilfiger"
+  },
+  {
+  "productName": "Women Blue Printed Maxi Dress",
+  "productId": "2",
+  "productPrice": "27",
+  "productDes": "Blue printed woven maxi dress, has a V-neck, short sleeves, flared hem\n\nSize & Fit\nSemi-fit\nThe model (height 5'8\") is wearing a size S\n\nMaterial & Care\nPolyester\nMachine-wash\n\n",
+  "productRating": 3.2,
+  "productDisCount": "",
+  "productHave": false,
+  "productBrand": "RARE Vibes",
+  "productImage": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f9f13ec3-c11a-460a-b35a-9f6ec31590871556781497682-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-1.jpg",
+  "productCategory": "Clothing",
+  "productNote": "RARE Vibes"
+  },
+  {
+    "productName": "Cateye Sunglasses",
+    "productId": "3",
+    "productPrice": "23",
+    "productDes": "Lens colour: Black\nLens feature: UV Protected Lens\nFrame material: Plastic and Metal\nFrame style: Full Rim\nBest suited for: Oval face shape\nComes in a DressBerry cover\nWarranty: 6 months\nWarranty provided by brand/manufacturer\n\nMaterial & Care\nPlastic\nRemove dust and grime by gently wiping the lens with a cloth\n\n",
+    "productRating": 4.2,
+    "productDisCount": "10%",
+    "productHave": true,
+    "productBrand": "Cateye Glass",
+    "productImage": "https://image.freepik.com/free-photo/young-pretty-blonde-woman-with-sunglasses-isolated-red-wall_231208-10146.jpg",
+    "productCategory": "Clothing",
+    "productNote": "Cateye Glass"
+  },
+  {
+    "productName": "Unisex Aviator Sunglasses",
+    "productId": "4",
+    "productPrice": "31",
+    "productDes": "Lens colour: Black\nLens feature: UV Protected Lens\nFrame material: Plastic and Metal\nFrame style: Full Rim\nBest suited for: Oval face shape\nComes in a DressBerry cover\nWarranty: 6 months\nWarranty provided by brand/manufacturer\n\nMaterial & Care\nPlastic\nRemove dust and grime by gently wiping the lens with a cloth\n\n",
+    "productRating": 4.2,
+    "productDisCount": "6%",
+    "productHave": true,
+    "productBrand": "ROYAL SON",
+    "productImage": "https://image.freepik.com/free-photo/young-pretty-woman-with-sunglasses-yellow_231208-10666.jpg",
+    "productCategory": "Clothing",
+    "productNote": "ROYAL SON"
+  }
+]

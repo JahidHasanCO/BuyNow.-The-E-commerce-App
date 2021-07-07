@@ -1,0 +1,64 @@
+com/example/buynow/databinding/ActivityAddAddressBinding.java
+ com.example.buynow.databinding.ActivityAddAddressBinding
+com/example/buynow/databinding/FragmentAddToBagBinding.java
+ com.example.buynow.databinding.FragmentAddToBagBinding
+com/example/buynow/databinding/ActivityVisualResultBinding.java
+ com.example.buynow.databinding.ActivityVisualResultBinding
+com/example/buynow/databinding/ActivityVisualSearchBinding.java
+ com.example.buynow.databinding.ActivityVisualSearchBinding
+com/example/buynow/databinding/ActivityShipingAddressBinding.java
+ com.example.buynow.databinding.ActivityShipingAddressBinding
+com/example/buynow/databinding/CoverSingleBinding.java
+ com.example.buynow.databinding.CoverSingleBinding
+com/example/buynow/databinding/VisualPredictBinding.java
+ com.example.buynow.databinding.VisualPredictBinding
+com/example/buynow/databinding/ActivitySettingsBinding.java
+ com.example.buynow.databinding.ActivitySettingsBinding
+com/example/buynow/databinding/FragmentFavBinding.java
+ com.example.buynow.databinding.FragmentFavBinding
+com/example/buynow/db/ProductDao_Impl.java
+ com.example.buynow.db.ProductDao_Impl
+ com.example.buynow.db.ProductDao_Impl$1
+ com.example.buynow.db.ProductDao_Impl$2
+ com.example.buynow.db.ProductDao_Impl$3
+ com.example.buynow.db.ProductDao_Impl$4
+ com.example.buynow.db.ProductDao_Impl$5
+ com.example.buynow.db.ProductDao_Impl$6
+ com.example.buynow.db.ProductDao_Impl$7
+com/example/buynow/databinding/ActivityLoginBinding.java
+ com.example.buynow.databinding.ActivityLoginBinding
+com/example/buynow/databinding/CustomDialogBinding.java
+ com.example.buynow.databinding.CustomDialogBinding
+com/example/buynow/databinding/ActivityEmailVerifyBinding.java
+ com.example.buynow.databinding.ActivityEmailVerifyBinding
+com/example/buynow/databinding/FragmentProfileBinding.java
+ com.example.buynow.databinding.FragmentProfileBinding
+com/example/buynow/databinding/SingleProductBinding.java
+ com.example.buynow.databinding.SingleProductBinding
+com/example/buynow/databinding/FragmentHomeBinding.java
+ com.example.buynow.databinding.FragmentHomeBinding
+com/example/buynow/BuildConfig.java
+ com.example.buynow.BuildConfig
+com/example/buynow/databinding/ActivityHomeBinding.java
+ com.example.buynow.databinding.ActivityHomeBinding
+com/example/buynow/databinding/CartItemSingleBinding.java
+ com.example.buynow.databinding.CartItemSingleBinding
+com/example/buynow/databinding/ActivitySplashScreenBinding.java
+ com.example.buynow.databinding.ActivitySplashScreenBinding
+com/example/buynow/databinding/FragmentBagBinding.java
+ com.example.buynow.databinding.FragmentBagBinding
+com/example/buynow/databinding/FragmentShopBinding.java
+ com.example.buynow.databinding.FragmentShopBinding
+com/example/buynow/databinding/ActivityProductDetailsBinding.java
+ com.example.buynow.databinding.ActivityProductDetailsBinding
+com/example/buynow/db/AppDatabase_Impl.java
+ com.example.buynow.db.AppDatabase_Impl
+ com.example.buynow.db.AppDatabase_Impl$1
+com/example/buynow/ml/MobilenetV110224Quant.java
+ com.example.buynow.ml.MobilenetV110224Quant
+ com.example.buynow.ml.MobilenetV110224Quant$1
+ com.example.buynow.ml.MobilenetV110224Quant$Outputs
+com/example/buynow/databinding/PredictedResultSingleBinding.java
+ com.example.buynow.databinding.PredictedResultSingleBinding
+com/example/buynow/databinding/ActivitySignUpBinding.java
+ com.example.buynow.databinding.ActivitySignUpBinding

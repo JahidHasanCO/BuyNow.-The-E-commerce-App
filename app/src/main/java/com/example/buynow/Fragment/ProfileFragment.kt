@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide
 
 import com.example.buynow.R
 import com.example.buynow.SettingsActivity
+import com.example.buynow.ShipingAddressActivity
 
 
 import com.example.buynow.Utils.FirebaseUtils.storageReference
@@ -88,6 +89,11 @@ class ProfileFragment : Fragment() {
         linearLayout2 = view.findViewById(R.id.linearLayout2)
         linearLayout3 = view.findViewById(R.id.linearLayout3)
         linearLayout4 = view.findViewById(R.id.linearLayout4)
+        val shippingAddressCard_ProfilePage = view.findViewById<CardView>(R.id.shippingAddressCard_ProfilePage)
+
+        shippingAddressCard_ProfilePage.setOnClickListener {
+            startActivity(Intent(context,ShipingAddressActivity::class.java))
+        }
 
         hideLayout()
 

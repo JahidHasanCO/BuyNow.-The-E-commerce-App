@@ -59,6 +59,11 @@ class VisualSearchActivity : AppCompatActivity() {
         uploadAPhotoBtn_visualSearch = findViewById(R.id.uploadAPhotoBtn_visualSearch)
         takeAPhotoBtn_visualSearch = findViewById(R.id.takeAPhotoBtn_visualSearch)
 
+        val backIv_visualAc: ImageView = findViewById(R.id.backIv_visualAc)
+        backIv_visualAc.setOnClickListener {
+            onBackPressed()
+        }
+
 //        bitmap = BitmapFactory.decodeResource(this.getResources(),
 //            R.drawable.bn);
 

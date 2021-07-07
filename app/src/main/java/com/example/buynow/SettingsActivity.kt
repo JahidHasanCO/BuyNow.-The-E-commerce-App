@@ -40,16 +40,8 @@ class SettingsActivity : AppCompatActivity() {
         EmailEt_SettingsPage = findViewById(R.id.EmailEt_SettingsPage)
         saveSetting_SettingsBtn = findViewById(R.id.saveSetting_SettingsBtn)
         val backIv_ProfileFrag:ImageView = findViewById(R.id.backIv_ProfileFrag)
-        val darkMode_Switch: SwitchMaterial = findViewById(R.id.darkMode_Switch)
 
-        darkMode_Switch.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(buttonView.isChecked){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-            else{
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
+
         backIv_ProfileFrag.setOnClickListener {
             onBackPressed()
         }
