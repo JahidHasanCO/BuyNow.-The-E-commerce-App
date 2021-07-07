@@ -17,6 +17,7 @@ import java.io.IOException
 
 class VisualResultActivity : AppCompatActivity() {
 
+
     lateinit var predictNameTV:TextView
     lateinit var resultProduct:ArrayList<Product>
 
