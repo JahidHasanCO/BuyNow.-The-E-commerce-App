@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="new_product">New</string>
+    <string name="card_number">* * * * * * * * * * * * 3947</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="use_as_default_payment_method">Use as default payment method</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="add_new_card">Add new Card</string>
+    <string name="add_card">Add Card</string>
 </resources>

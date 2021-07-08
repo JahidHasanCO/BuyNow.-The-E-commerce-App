@@ -19,10 +19,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:scaleType="centerCrop"
+            android:scaleType="center"
             android:id="@+id/animationViewFavPage"
             android:layout_width="match_parent"
             android:layout_height="250dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -13,15 +13,11 @@ import android.widget.*
 import androidx.cardview.widget.CardView
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
-
-
+import com.example.buynow.*
 import com.example.buynow.R
-import com.example.buynow.SettingsActivity
-import com.example.buynow.ShipingAddressActivity
 
 
 import com.example.buynow.Utils.FirebaseUtils.storageReference
-import com.example.buynow.loadingDialog
 import com.google.android.gms.tasks.Continuation
 
 import com.google.android.gms.tasks.Task
@@ -90,9 +86,14 @@ class ProfileFragment : Fragment() {
         linearLayout3 = view.findViewById(R.id.linearLayout3)
         linearLayout4 = view.findViewById(R.id.linearLayout4)
         val shippingAddressCard_ProfilePage = view.findViewById<CardView>(R.id.shippingAddressCard_ProfilePage)
+        val paymentMethod_ProfilePage = view.findViewById<CardView>(R.id.paymentMethod_ProfilePage)
 
         shippingAddressCard_ProfilePage.setOnClickListener {
             startActivity(Intent(context,ShipingAddressActivity::class.java))
+        }
+
+        paymentMethod_ProfilePage.setOnClickListener {
+            startActivity(Intent(context,PaymentMethodActivity::class.java))
         }
 
         hideLayout()

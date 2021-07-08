@@ -75,4 +75,6 @@ class CartAdapter(private val ctx: Context, val listener:CartItemClickAdapter ):
 interface CartItemClickAdapter{
     fun onItemDeleteClick(product: ProductEntity)
     fun onItemUpdateClick(product: ProductEntity)
+
+
 }
