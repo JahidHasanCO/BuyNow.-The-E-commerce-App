@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.buynow.db.Card.CardDao
 import com.example.buynow.db.Card.CardEntity
 
-@Database(entities = [ProductEntity::class,CardEntity::class], version = 1)
+@Database(entities = [ProductEntity::class,CardEntity::class], version = 1,exportSchema = false)
 abstract class AppDatabase:RoomDatabase() {
 
     abstract fun productDao(): ProductDao

@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_card"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +70,7 @@
                 android:fontFamily="@font/metropolis_semibold"
                 android:maxLines="2"
                 android:text="Jahid Hasan"
+                android:maxEms="18"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -96,6 +98,7 @@
                 android:fontFamily="@font/metropolis_semibold"
                 android:maxLines="2"
                 android:text="05/23"
+                android:maxEms="5"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 

@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BuyNow">
-        <activity android:name=".PaymentMethodActivity"></activity>
+        <activity android:name=".PaymentMethodActivity" />
         <activity android:name=".AddAddressActivity" />
         <activity android:name=".ShipingAddressActivity" />
         <activity android:name=".VisualResultActivity" />

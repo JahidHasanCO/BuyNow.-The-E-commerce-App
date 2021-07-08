@@ -4,10 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buynow.R
 import com.example.buynow.db.Card.CardEntity
@@ -24,6 +21,7 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
         val cardHName: TextView = itemView.findViewById(R.id.cardHolderName_singleCard)
         val exp: TextView = itemView.findViewById(R.id.expiryDate_singleCard)
         val layD : LinearLayout = itemView.findViewById(R.id.useDefault_Layout)
+        val checkox : CheckBox = itemView.findViewById(R.id.checkBox_SingleCard)
 
     }
 
@@ -42,6 +40,7 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
 
         if(cardList.size > 1){
             holder.layD.visibility = View.VISIBLE
+
         }
         else{
             holder.layD.visibility = View.GONE

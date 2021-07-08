@@ -105,11 +105,11 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
     private fun saveData() {
 
         val holderName:String =
-            bottomSheetView.findViewById<EditText>(R.id.nameEt_cardAddBottomSheet).toString()
+            bottomSheetView.findViewById<EditText>(R.id.nameEt_cardAddBottomSheet).text.toString()
 
-        val cardNumber: String = bottomSheetView.findViewById<EditText>(R.id.cardNumber_cardAddBottomSheet).toString()
-        val exp : String = bottomSheetView.findViewById<EditText>(R.id.exp_cardAddBottomSheet).toString()
-        val cvv : String = bottomSheetView.findViewById<EditText>(R.id.cvv_cardAddBottomSheet).toString()
+        val cardNumber: String = bottomSheetView.findViewById<EditText>(R.id.cardNumber_cardAddBottomSheet).text.toString()
+        val exp : String = bottomSheetView.findViewById<EditText>(R.id.exp_cardAddBottomSheet).text.toString()
+        val cvv : String = bottomSheetView.findViewById<EditText>(R.id.cvv_cardAddBottomSheet).text.toString()
 
         var cardBrand: String = "MasterCard"
 
