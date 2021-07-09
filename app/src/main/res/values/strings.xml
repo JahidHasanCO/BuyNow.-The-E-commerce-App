@@ -10,4 +10,7 @@
     <string name="payment_methods">Payment Methods</string>
     <string name="add_new_card">Add new Card</string>
     <string name="add_card">Add Card</string>
+    <string name="empty_favourite">Empty Favourite</string>
+    <string name="add_to_bag">Add To Bag</string>
+    <string name="card_number_star">**** **** **** </string>
 </resources>

@@ -8,6 +8,13 @@ plugins {
 }
 
 android {
+
+    signingConfigs {
+        dev {
+            v2SigningEnabled true
+        }
+    }
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 

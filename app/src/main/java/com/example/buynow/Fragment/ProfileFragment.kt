@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.ViewModelProviders
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.example.buynow.*
@@ -18,6 +19,7 @@ import com.example.buynow.R
 
 
 import com.example.buynow.Utils.FirebaseUtils.storageReference
+import com.example.buynow.db.Card.CardViewModel
 import com.google.android.gms.tasks.Continuation
 
 import com.google.android.gms.tasks.Task
@@ -55,10 +57,12 @@ class ProfileFragment : Fragment() {
     lateinit var profileName_profileFrag:TextView
     lateinit var profileEmail_profileFrag:TextView
 
+    private lateinit var cardViewModel: CardViewModel
 
     private val userCollectionRef = Firebase.firestore.collection("Users")
     val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
+    var cards: Int = 0
 
     lateinit var linearLayout2:LinearLayout
     lateinit var linearLayout3:LinearLayout
@@ -87,6 +91,15 @@ class ProfileFragment : Fragment() {
         linearLayout4 = view.findViewById(R.id.linearLayout4)
         val shippingAddressCard_ProfilePage = view.findViewById<CardView>(R.id.shippingAddressCard_ProfilePage)
         val paymentMethod_ProfilePage = view.findViewById<CardView>(R.id.paymentMethod_ProfilePage)
+        val cardsNumber_profileFrag:TextView = view.findViewById(R.id.cardsNumber_profileFrag)
+
+        cardViewModel = ViewModelProviders.of(this).get(CardViewModel::class.java)
+
+        cardViewModel.allCards.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            cards = it.size
+        })
+
+        cardsNumber_profileFrag.text = "You Have "+ cards.toString() + "Cards."
 
         shippingAddressCard_ProfilePage.setOnClickListener {
             startActivity(Intent(context,ShipingAddressActivity::class.java))

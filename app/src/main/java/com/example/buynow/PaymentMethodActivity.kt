@@ -1,7 +1,7 @@
 package com.example.buynow
 
 import android.content.Context
-import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,13 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buynow.Adapter.CarDItemClickAdapter
 import com.example.buynow.Adapter.CardAdapter
-import com.example.buynow.Adapter.CartAdapter
-import com.example.buynow.Adapter.CartItemClickAdapter
+import com.example.buynow.Utils.CardType
+import com.example.buynow.Utils.CardValidator.isValid
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.db.Card.CardEntity
 import com.example.buynow.db.Card.CardViewModel
-import com.example.buynow.db.CartViewModel
-import com.example.buynow.db.ProductEntity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -31,6 +29,8 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
     lateinit var cardRec: RecyclerView
     lateinit var cardAdapter: CardAdapter
+
+    lateinit var defaultCard: SharedPreferences
 
     lateinit var bottomSheetDialod: BottomSheetDialog
     lateinit var bottomSheetView: View
@@ -48,7 +48,7 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
         Item = arrayListOf()
         cardViewModel = ViewModelProviders.of(this).get(CardViewModel::class.java)
-
+        defaultCard = this.getSharedPreferences("DefaultCreditCard", Context.MODE_PRIVATE)
         getRecData()
         cardRec.layoutManager = LinearLayoutManager(this)
         cardAdapter = CardAdapter( this, this )
@@ -91,11 +91,13 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
     private fun bottomSheet(){
 
-
+        bottomSheetView.findViewById<EditText>(R.id.nameEt_cardAddBottomSheet).text.clear()
+        bottomSheetView.findViewById<EditText>(R.id.cardNumber_cardAddBottomSheet).text.clear()
+        bottomSheetView.findViewById<EditText>(R.id.exp_cardAddBottomSheet).text.clear()
+        bottomSheetView.findViewById<EditText>(R.id.cvv_cardAddBottomSheet).text.clear()
 
         bottomSheetView.findViewById<Button>(R.id.addCardBtn_cardAddBottomSheet).setOnClickListener {
             saveData()
-            bottomSheetDialod.dismiss()
         }
 
         bottomSheetDialod.setContentView(bottomSheetView)
@@ -113,8 +115,28 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
         var cardBrand: String = "MasterCard"
 
-        cardViewModel.insert(CardEntity(holderName,cardNumber,exp,cvv,cardBrand))
-        toast("New Card Added")
+        if(isValid(bottomSheetView.findViewById<EditText>(R.id.cardNumber_cardAddBottomSheet).text.toString().toLong())) {
+
+            cardBrand = CardType.detect(bottomSheetView.findViewById<EditText>(R.id.cardNumber_cardAddBottomSheet).text.toString())
+                .toString()
+
+            cardViewModel.insert(CardEntity(holderName, cardNumber, exp, cvv, cardBrand))
+
+            if(!defaultCard.getBoolean("isHaveDefaultCard",false)){
+                val editor:SharedPreferences.Editor =  defaultCard.edit()
+                editor.putBoolean("isHaveDefaultCard",true)
+                editor.putString("cardNumber",cardNumber)
+                editor.apply()
+                editor.commit()
+            }
+
+            toast("New Card Added")
+            bottomSheetDialod.dismiss()
+
+        }
+        else{
+            toast("Enter Valid Card.")
+        }
 
     }
 

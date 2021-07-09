@@ -2,6 +2,7 @@ package com.example.buynow
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,6 +40,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     lateinit var RatingProductDetails: TextView
     lateinit var productRating_singleProduct: RatingBar
 
+    lateinit var defaultCard: SharedPreferences
+
     lateinit var RecomRecView_ProductDetailsPage: RecyclerView
     lateinit var newProductAdapter: ProductAdapter
     lateinit var newProduct: ArrayList<Product>
@@ -48,6 +51,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     var pPrice: Int = 0
     lateinit var pPid: String
     lateinit var pImage: String
+
+    lateinit var cardNumber: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,9 +76,15 @@ class ProductDetailsActivity : AppCompatActivity() {
         backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
         val addToCart_ProductDetailsPage: Button = findViewById(R.id.addToCart_ProductDetailsPage)
         val shippingAddress_productDetailsPage:LinearLayout = findViewById(R.id.shippingAddress_productDetailsPage)
+        val cardNumberProduct_Details:TextView = findViewById(R.id.cardNumberProduct_Details)
+
+        defaultCard = this.getSharedPreferences("DefaultCreditCard", Context.MODE_PRIVATE)
+        cardNumber = defaultCard.getString("cardNumber","").toString()
+
+        cardNumberProduct_Details.text = cardNumber
 
         shippingAddress_productDetailsPage.setOnClickListener {
-            startActivity(Intent(this,ShipingAddressActivity::class.java))
+            startActivity(Intent(this,PaymentMethodActivity::class.java))
         }
 
 

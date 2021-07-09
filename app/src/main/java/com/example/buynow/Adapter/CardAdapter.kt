@@ -1,6 +1,7 @@
 package com.example.buynow.Adapter
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.example.buynow.db.ProductEntity
 class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :RecyclerView.Adapter<CardAdapter.cardViewHolder>() {
 
     private val cardList: ArrayList<CardEntity> = arrayListOf()
+    val defaultCard:SharedPreferences = ctx.getSharedPreferences("DefaultCreditCard", Context.MODE_PRIVATE)
 
     public class cardViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -21,7 +23,8 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
         val cardHName: TextView = itemView.findViewById(R.id.cardHolderName_singleCard)
         val exp: TextView = itemView.findViewById(R.id.expiryDate_singleCard)
         val layD : LinearLayout = itemView.findViewById(R.id.useDefault_Layout)
-        val checkox : CheckBox = itemView.findViewById(R.id.checkBox_SingleCard)
+        val checkbox : CheckBox = itemView.findViewById(R.id.checkBox_SingleCard)
+        val cardImage:ImageView = itemView.findViewById(R.id.cardBrandImage_singleCard)
 
     }
 
@@ -34,10 +37,27 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
     override fun onBindViewHolder(holder: cardViewHolder, position: Int) {
         val cardItem:CardEntity = cardList[position]
 
+        if (cardItem.number == defaultCard.getString("cardNumber","")){
+            holder.checkbox.isChecked = true
+        }
+
+        when (cardItem.brandC) {
+            "MASTERCARD" -> holder.cardImage.setImageResource(R.drawable.ic_mastercard)
+            "VISA" -> holder.cardImage.setImageResource(R.drawable.ic_visa)
+            "AMERICAN_EXPRESS" -> holder.cardImage.setImageResource(R.drawable.ic_american_express)
+            "DINERS_CLUB" -> holder.cardImage.setImageResource(R.drawable.ic_diners_club)
+            "DISCOVER" -> holder.cardImage.setImageResource(R.drawable.ic_discover)
+            "JCB" -> holder.cardImage.setImageResource(R.drawable.ic_jcb)
+            "CHINA_UNION_PAY" -> holder.cardImage.setImageResource(R.drawable.ic_unionpay)
+
+            else -> {
+                holder.cardImage.setImageResource(R.drawable.ic_mastercard)
+            }
+        }
+
         holder.cardHName.text = cardItem.nameCH.toString()
         holder.exp.text = cardItem.exp
-//        holder.cardNumber.text = "**** **** **** "+ cardItem.number[cardItem.number.length - 4] + cardItem.number[cardItem.number.length - 3] + cardItem.number[cardItem.number.length - 2] + cardItem.number[cardItem.number.length - 1 ]
-
+        holder.cardNumber.text = cardItem.number
         if(cardList.size > 1){
             holder.layD.visibility = View.VISIBLE
 
@@ -45,6 +65,27 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
         else{
             holder.layD.visibility = View.GONE
         }
+
+        holder.checkbox.setOnClickListener {
+
+            val editor:SharedPreferences.Editor =  defaultCard.edit()
+            if(holder.checkbox.isChecked){
+                holder.checkbox.isChecked = false
+                editor.putBoolean("isHaveDefaultCard",false)
+                editor.putString("cardNumber","")
+
+            }
+            else{
+                holder.checkbox.isChecked = true
+                editor.putBoolean("isHaveDefaultCard",true)
+                editor.putString("cardNumber",cardItem.number)
+
+            }
+            editor.apply()
+            editor.commit()
+            notifyDataSetChanged()
+        }
+
     }
 
     override fun getItemCount(): Int {
