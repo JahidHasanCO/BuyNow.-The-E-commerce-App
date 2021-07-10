@@ -99,7 +99,13 @@ class ProfileFragment : Fragment() {
             cards = it.size
         })
 
-        cardsNumber_profileFrag.text = "You Have "+ cards.toString() + "Cards."
+        if(cards == 0){
+            cardsNumber_profileFrag.text = "You Have no Cards."
+        }
+        else{
+
+        cardsNumber_profileFrag.text = "You Have "+ cards.toString() + " Cards."
+        }
 
         shippingAddressCard_ProfilePage.setOnClickListener {
             startActivity(Intent(context,ShipingAddressActivity::class.java))

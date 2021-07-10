@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_card"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -113,8 +113,8 @@
                 android:id="@+id/cardBrandImage_singleCard"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:scaleType="center"
-                android:src="@drawable/mastercard" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/visa_card" />
 
         </LinearLayout>
     </LinearLayout>

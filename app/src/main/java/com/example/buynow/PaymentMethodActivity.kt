@@ -19,6 +19,7 @@ import com.example.buynow.Adapter.CarDItemClickAdapter
 import com.example.buynow.Adapter.CardAdapter
 import com.example.buynow.Utils.CardType
 import com.example.buynow.Utils.CardValidator.isValid
+import com.example.buynow.Utils.DefaultCard.CreateDefCard
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.db.Card.CardEntity
 import com.example.buynow.db.Card.CardViewModel
@@ -30,7 +31,7 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
     lateinit var cardRec: RecyclerView
     lateinit var cardAdapter: CardAdapter
 
-    lateinit var defaultCard: SharedPreferences
+
 
     lateinit var bottomSheetDialod: BottomSheetDialog
     lateinit var bottomSheetView: View
@@ -48,7 +49,7 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
         Item = arrayListOf()
         cardViewModel = ViewModelProviders.of(this).get(CardViewModel::class.java)
-        defaultCard = this.getSharedPreferences("DefaultCreditCard", Context.MODE_PRIVATE)
+
         getRecData()
         cardRec.layoutManager = LinearLayoutManager(this)
         cardAdapter = CardAdapter( this, this )
@@ -122,14 +123,7 @@ class PaymentMethodActivity : AppCompatActivity(), CarDItemClickAdapter {
 
             cardViewModel.insert(CardEntity(holderName, cardNumber, exp, cvv, cardBrand))
 
-            if(!defaultCard.getBoolean("isHaveDefaultCard",false)){
-                val editor:SharedPreferences.Editor =  defaultCard.edit()
-                editor.putBoolean("isHaveDefaultCard",true)
-                editor.putString("cardNumber",cardNumber)
-                editor.apply()
-                editor.commit()
-            }
-
+            CreateDefCard(cardNumber,true)
             toast("New Card Added")
             bottomSheetDialod.dismiss()
 

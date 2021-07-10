@@ -14,7 +14,7 @@ import com.example.buynow.db.ProductEntity
 class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :RecyclerView.Adapter<CardAdapter.cardViewHolder>() {
 
     private val cardList: ArrayList<CardEntity> = arrayListOf()
-    val defaultCard:SharedPreferences = ctx.getSharedPreferences("DefaultCreditCard", Context.MODE_PRIVATE)
+
 
     public class cardViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -29,17 +29,15 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): cardViewHolder {
-        val cardView = LayoutInflater.from(ctx).inflate(R.layout.single_card,parent,false)
 
+        val cardView = LayoutInflater.from(ctx).inflate(R.layout.single_card,parent,false)
         return cardViewHolder(cardView)
     }
 
     override fun onBindViewHolder(holder: cardViewHolder, position: Int) {
         val cardItem:CardEntity = cardList[position]
 
-        if (cardItem.number == defaultCard.getString("cardNumber","")){
-            holder.checkbox.isChecked = true
-        }
+
 
         when (cardItem.brandC) {
             "MASTERCARD" -> holder.cardImage.setImageResource(R.drawable.ic_mastercard)
@@ -68,22 +66,22 @@ class CardAdapter(private val ctx: Context, val listener:CarDItemClickAdapter) :
 
         holder.checkbox.setOnClickListener {
 
-            val editor:SharedPreferences.Editor =  defaultCard.edit()
-            if(holder.checkbox.isChecked){
-                holder.checkbox.isChecked = false
-                editor.putBoolean("isHaveDefaultCard",false)
-                editor.putString("cardNumber","")
+//            val editor:SharedPreferences.Editor =  defaultCard.edit()
+//            if(holder.checkbox.isChecked){
+//                holder.checkbox.isChecked = false
+//                editor.putBoolean("isHaveDefaultCard",false)
+//                editor.putString("cardNumber","")
+//
+//            }
+//            else{
+//                holder.checkbox.isChecked = true
+//                editor.putBoolean("isHaveDefaultCard",true)
+//                editor.putString("cardNumber",cardItem.number)
+//
+//            }
+//            editor.apply()
+//            editor.commit()
 
-            }
-            else{
-                holder.checkbox.isChecked = true
-                editor.putBoolean("isHaveDefaultCard",true)
-                editor.putString("cardNumber",cardItem.number)
-
-            }
-            editor.apply()
-            editor.commit()
-            notifyDataSetChanged()
         }
 
     }
