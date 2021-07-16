@@ -2,6 +2,7 @@ package com.example.buynow
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.buynow.Adapter.ProductAdapter
 import com.example.buynow.Model.Product
+import com.example.buynow.Utils.DefaultCard.GetDefCard
+import com.example.buynow.Utils.Extensions.cardXXGen
 import com.example.buynow.Utils.Extensions.toast
 import com.example.buynow.db.CartViewModel
 import com.example.buynow.db.ProductEntity
@@ -39,6 +42,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     lateinit var RatingProductDetails: TextView
     lateinit var productRating_singleProduct: RatingBar
 
+
+
     lateinit var RecomRecView_ProductDetailsPage: RecyclerView
     lateinit var newProductAdapter: ProductAdapter
     lateinit var newProduct: ArrayList<Product>
@@ -48,6 +53,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     var pPrice: Int = 0
     lateinit var pPid: String
     lateinit var pImage: String
+
+    lateinit var cardNumber: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,9 +78,20 @@ class ProductDetailsActivity : AppCompatActivity() {
         backIv_ProfileFrag = findViewById(R.id.backIv_ProfileFrag)
         val addToCart_ProductDetailsPage: Button = findViewById(R.id.addToCart_ProductDetailsPage)
         val shippingAddress_productDetailsPage:LinearLayout = findViewById(R.id.shippingAddress_productDetailsPage)
+        val cardNumberProduct_Details:TextView = findViewById(R.id.cardNumberProduct_Details)
+
+        cardNumber = GetDefCard()
+
+        if(cardNumber == "" || cardNumber == null){
+            cardNumberProduct_Details.text = "You Have No Cards"
+        }
+        else{
+            cardNumberProduct_Details.text = cardXXGen(cardNumber)
+        }
+
 
         shippingAddress_productDetailsPage.setOnClickListener {
-            startActivity(Intent(this,ShipingAddressActivity::class.java))
+            startActivity(Intent(this,PaymentMethodActivity::class.java))
         }
 
 
