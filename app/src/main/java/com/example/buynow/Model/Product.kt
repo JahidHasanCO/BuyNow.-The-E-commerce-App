@@ -12,4 +12,4 @@ data class Product (
     val productImage:String = "",
     val productCategory:String = "",
     val productNote:String = "",
-    )
+)

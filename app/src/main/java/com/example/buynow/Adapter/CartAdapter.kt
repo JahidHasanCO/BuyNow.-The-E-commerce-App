@@ -15,17 +15,17 @@ import com.example.buynow.Model.Product
 import com.example.buynow.R
 import com.example.buynow.db.ProductEntity
 
-class CartAdapter(private val ctx: Context, val listener:CartItemClickAdapter ):RecyclerView.Adapter<CartAdapter.cartViewHolder>() {
+class CartAdapter(private val ctx: Context, val listener:CartItemClickAdapter ):RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     private val cartList: ArrayList<ProductEntity> = arrayListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): cartViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val cartView = LayoutInflater.from(ctx).inflate(R.layout.cart_item_single,parent,false)
 
-        return cartViewHolder(cartView)
+        return CartViewHolder(cartView)
     }
 
-    override fun onBindViewHolder(holder: cartViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
 
 
         val cartItem:ProductEntity = cartList[position]
@@ -52,7 +52,7 @@ class CartAdapter(private val ctx: Context, val listener:CartItemClickAdapter ):
 
 
 
-    public class cartViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    public class CartViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val cartImage: ImageView = itemView.findViewById(R.id.cartImage)
         val cartMore: ImageView = itemView.findViewById(R.id.cartMore)

@@ -18,7 +18,6 @@ object DefaultCard {
             editor.putBoolean("isHaveDefaultCard",boolean)
             editor.putString("cardNumber",cardNumber)
             editor.apply()
-            editor.commit()
         }
     }
 
