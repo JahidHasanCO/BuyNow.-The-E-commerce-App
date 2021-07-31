@@ -207,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/metropolis_regular"
-                        android:text="3 dresses"
+                        android:text="No Address"
                         android:textColor="@color/textAd"
                         android:textSize="12sp" />
 
