@@ -8,7 +8,7 @@
 
 **Sign Up Page**
 
-<img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/SignUp_activity.png" width="270" height="585"> <img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Shop2.png" width="270" height="585">
+<img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/SignUp_activity.png" width="270" height="585"> <img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Home_activity2.png" width="270" height="585"> 
 
 
 **Home Activity**
@@ -18,8 +18,9 @@
 
 **Shop Activity**
 
-<img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Shop.png" width="270" height="585"> <img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Home_activity2.png" width="270" height="585"> 
-}
+<img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Shop.png" width="270" height="585"> <img src="https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/Shop2.png" width="270" height="585">
+
+
 
 **Bag Activity**
 
