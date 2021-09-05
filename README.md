@@ -33,7 +33,7 @@
 
 
 **Libraries Used**
- -  FireBae 
+ -  FireBase 
  -  Material Design
  -  Tensor Flow 
  -  Room Database
