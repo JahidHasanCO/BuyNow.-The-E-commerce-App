@@ -1,5 +1,7 @@
 # BuyNow-App
 
+Buy Now is An e-commerce app. In this app I use Machine Learning Algorithm for user can search visually. User upload or take photo, and this Algorithm will search for a similar product.
+
 ## Built With 🛠
 
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
