@@ -1,5 +1,15 @@
 # BuyNow-App
 
+## Built With 🛠
+
+- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
+  development.
+- [FireBase](https://firebase.google.com/) - Firebase helps you build and run successful apps Backed by Google and loved by app developmentteams - from startups to global enterprise.
+- [Material Components for Android](https://github.com/material-components/material-components-android)
+  - Modular and customizable Material Design UI components for Android.
+- [Figma](https://figma.com/) - Figma is a vector graphics editor and prototyping tool which is
+  primarily web-based.
+
 
 ## Day Mode 🌞
 Login Page | SignUp Page | Home Page | Home Page2 | Shop Page | Shop Page2 | Bag Page | Visual Search Page
