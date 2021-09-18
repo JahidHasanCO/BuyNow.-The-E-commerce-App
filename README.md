@@ -29,18 +29,6 @@ Login Page | SignUp Page | Home Page | Home Page2 | Shop Page | Bag Page | Visua
 
 <br />
 
-**Libraries Used**
- -  FireBase 
- -  Material Design
- -  Tensor Flow 
- -  Room Database
- -  LifeCycle
- -  Kotlin Coroutines
- -  Gson
- -  Glide
- -  Circle ImageView
- -  Lottie Animation
- 
 ```
 MIT License
 
