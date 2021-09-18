@@ -1,5 +1,6 @@
-# BuyNow-App
+![GitHub Cards Preview](https://github.com/JahidHasanCO/BuyNow-App/blob/master/ART/cover.png)
 
+# 🔖BuyNow-App
 Buy Now is An e-commerce app. In this app I use Machine Learning Algorithm for users can search visually. Users upload or take a photo, and this Algorithm will search for a similar product.
 
 ## Built With 🛠
