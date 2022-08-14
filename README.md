@@ -35,7 +35,7 @@ Login Page | SignUp Page | Home Page | Home Page2 | Shop Page | Bag Page | Visua
 
 ## License
 
-This action is distributed under the MIT license, check the [license](LICENSE) for more info. 
+This project is distributed under the MIT license, check the [license](LICENSE) for more info. 
 
 ### Contributing 💡
 If you want to contribute to this project and make it better with new ideas, your pull request is very welcomed.
