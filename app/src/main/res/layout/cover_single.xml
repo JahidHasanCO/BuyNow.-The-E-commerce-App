@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="480dp">
+
+
+    <ImageView
+        android:id="@+id/productImage_coverPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/productImage_coverPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="40dp"
+        >
+
+        <TextView
+            android:id="@+id/productNoteCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/metropolis_semibold"
+            android:maxLines="2"
+            android:text="Fashion Sale"
+            android:textColor="@color/white"
+            android:textSize="40dp">
+        </TextView>
+        <Button
+            android:id="@+id/productCheck_coverPage"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Check"
+            android:background="@drawable/btn_bg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

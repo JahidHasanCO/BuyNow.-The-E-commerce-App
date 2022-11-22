@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".EmailVerifyActivity">
+
+
+    <ImageView
+        android:layout_marginTop="200dp"
+        android:id="@+id/image_emailVerifyPage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_emailVerifyPage">
+
+        <TextView
+            android:id="@+id/title_emailVerifyPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_bold"
+            android:gravity="center"
+            android:text="Verify Your Email"
+            android:textColor="@color/mainText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/msg_emailVerifyPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/metropolis_regular"
+            android:gravity="center"
+            android:textColor="@color/textAd"
+            android:text="Verify Your Email"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/tryAgain_emailVerifyPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:elevation="10dp"
+            android:text="Try Again"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/reSendEmail_emailVerifyPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend E-mail"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/metropolis_regular"
+            android:textColor="@color/mainText"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#DB3022</color>
+    <color name="background">#17181A</color>
+    <color name="backgroundAd">#21242B</color>
+    <color name="error">#F01F0E</color>
+    <color name="success">#2AA952</color>
+    <color name="sale">#DB3022</color>
+    <color name="black">#222222</color>
+    <color name="mainText">#FFFFFFFF</color>
+    <color name="textAd">#9B9B9B</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
