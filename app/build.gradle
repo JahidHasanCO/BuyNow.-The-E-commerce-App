@@ -15,13 +15,12 @@ android {
         }
     }
 
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.example.buynow"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -46,10 +45,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    aaptOptions {
-        noCompress "tflite"
+    androidResources {
+        noCompress 'tflite'
     }
+    namespace 'com.example.buynow'
+
     buildFeatures {
         mlModelBinding true
     }
@@ -57,57 +57,53 @@ android {
 }
 
 dependencies {
-
-
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.firebase:firebase-auth:21.0.1'
-    implementation 'com.google.firebase:firebase-database:20.0.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:23.0.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
 
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
 
-    implementation 'org.tensorflow:tensorflow-lite:2.5.0'
-    implementation 'org.tensorflow:tensorflow-lite-support:0.2.0'
+    implementation 'org.tensorflow:tensorflow-lite:2.10.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2'
 
-    implementation 'org.tensorflow:tensorflow-lite:+'
-    implementation 'org.tensorflow:tensorflow-lite-gpu:+'
-    implementation 'org.tensorflow:tensorflow-lite-support:+'
+    implementation 'org.tensorflow:tensorflow-lite:2.10.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.10.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
 
-    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
-    implementation 'com.airbnb.android:lottie:3.7.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
 
-    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.google.code.gson:gson:2.9.0'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
 
     // Room architecture component dependencies
-    implementation 'androidx.room:room-runtime:2.4.0-alpha03'
-    kapt 'androidx.room:room-compiler:2.4.0-alpha03'
-    implementation 'androidx.room:room-ktx:2.4.0-alpha03'
+    implementation 'androidx.room:room-runtime:2.5.0-beta02'
+    kapt 'androidx.room:room-compiler:2.5.0-beta02'
+    implementation 'androidx.room:room-ktx:2.5.0-beta02'
 
     //Live data and life cycles
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 }
