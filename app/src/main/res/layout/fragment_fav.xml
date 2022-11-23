@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
-    tools:context=".Fragment.FavFragment">
+    tools:context=".presentation.fragment.FavFragment">
 
     <LinearLayout
         android:gravity="center"

@@ -18,24 +18,25 @@
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:theme="@style/Theme.BuyNow">
-        <activity android:name=".PaymentMethodActivity" />
-        <activity android:name=".AddAddressActivity" />
-        <activity android:name=".ShipingAddressActivity" />
-        <activity android:name=".VisualResultActivity" />
-        <activity android:name=".VisualSearchActivity" />
-        <activity android:name=".ProductDetailsActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".presentation.activity.PaymentMethodActivity" />
+        <activity android:name=".presentation.activity.AddAddressActivity" />
+        <activity android:name=".presentation.activity.ShipingAddressActivity" />
+        <activity android:name=".presentation.activity.VisualResultActivity" />
+        <activity android:name=".presentation.activity.VisualSearchActivity" />
+        <activity android:name=".presentation.activity.ProductDetailsActivity" />
+        <activity android:name=".presentation.activity.SettingsActivity" />
+        <activity android:name=".presentation.activity.SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailVerifyActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".presentation.activity.EmailVerifyActivity" />
+        <activity android:name=".presentation.activity.HomeActivity" />
+        <activity android:name=".presentation.activity.SignUpActivity" />
+        <activity android:name=".presentation.activity.LoginActivity" />
     </application>
 
 </manifest>

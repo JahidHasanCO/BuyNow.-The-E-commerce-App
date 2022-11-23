@@ -28,7 +28,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
         mlModelBinding true
     }
 
