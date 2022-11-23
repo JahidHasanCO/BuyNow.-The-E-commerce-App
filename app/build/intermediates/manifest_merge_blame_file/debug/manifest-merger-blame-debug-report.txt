@@ -1,0 +1,298 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.buynow"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:5:5-79
+12-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:5:22-76
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:6:5-80
+13-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:6:22-77
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:7:5-65
+14-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:7:22-62
+15
+16    <uses-feature android:name="android.hardware.camera.autofocus" />
+16-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:9:5-70
+16-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:9:19-67
+17
+18    <permission
+18-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+19        android:name="com.example.buynow.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.example.buynow.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+23
+24    <application
+24-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:11:5-39:19
+25        android:allowBackup="true"
+25-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:12:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.9.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\601f6d359f97386f213071bac9dd67fc\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+27        android:debuggable="true"
+28        android:hardwareAccelerated="false"
+28-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:18:9-44
+29        android:icon="@mipmap/ic_launcher"
+29-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:13:9-43
+30        android:label="@string/app_name"
+30-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:14:9-41
+31        android:largeHeap="true"
+31-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:17:9-33
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:15:9-54
+33        android:supportsRtl="true"
+33-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:16:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.BuyNow" >
+35-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:19:9-44
+36        <activity android:name="com.example.buynow.PaymentMethodActivity" />
+36-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:20:9-59
+36-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:20:19-56
+37        <activity android:name="com.example.buynow.AddAddressActivity" />
+37-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:21:9-56
+37-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:21:19-53
+38        <activity android:name="com.example.buynow.ShipingAddressActivity" />
+38-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:22:9-60
+38-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:22:19-57
+39        <activity android:name="com.example.buynow.VisualResultActivity" />
+39-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:23:9-58
+39-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:23:19-55
+40        <activity android:name="com.example.buynow.VisualSearchActivity" />
+40-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:24:9-58
+40-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:24:19-55
+41        <activity android:name="com.example.buynow.ProductDetailsActivity" />
+41-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:25:9-60
+41-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:25:19-57
+42        <activity android:name="com.example.buynow.SettingsActivity" />
+42-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:26:9-54
+42-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:26:19-51
+43        <activity
+43-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:27:9-34:20
+44            android:name="com.example.buynow.SplashScreenActivity"
+44-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:27:19-55
+45            android:exported="true" >
+45-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:28:13-36
+46            <intent-filter>
+46-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:29:13-33:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:30:17-69
+47-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:30:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:32:17-77
+49-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:32:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity android:name="com.example.buynow.EmailVerifyActivity" />
+52-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:35:9-57
+52-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:35:19-54
+53        <activity android:name="com.example.buynow.HomeActivity" />
+53-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:36:9-50
+53-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:36:19-47
+54        <activity android:name="com.example.buynow.SignUpActivity" />
+54-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:37:9-52
+54-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:37:19-49
+55        <activity android:name="com.example.buynow.LoginActivity" />
+55-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:38:9-51
+55-->C:\Users\jahidhasanco\AndroidStudioProjects\BuyNow.-The-E-commerce-App-master\app\src\main\AndroidManifest.xml:38:19-48
+56
+57        <service
+57-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:11:9-17:19
+58            android:name="com.google.firebase.components.ComponentDiscoveryService"
+58-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:12:13-84
+59            android:directBootAware="true"
+59-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
+60            android:exported="false" >
+60-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:13:13-37
+61            <meta-data
+61-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:14:13-16:85
+62                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+62-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:15:17-126
+63                android:value="com.google.firebase.components.ComponentRegistrar" />
+63-->[com.google.firebase:firebase-firestore-ktx:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\ffa8296777682c47c859f3f98f68d57a\transformed\jetified-firebase-firestore-ktx-24.4.1\AndroidManifest.xml:16:17-82
+64            <meta-data
+64-->[com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3a9fbc4384fbef68e6675d5f56852d33\transformed\jetified-firebase-storage-ktx-20.1.0\AndroidManifest.xml:14:13-16:85
+65                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+65-->[com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3a9fbc4384fbef68e6675d5f56852d33\transformed\jetified-firebase-storage-ktx-20.1.0\AndroidManifest.xml:15:17-122
+66                android:value="com.google.firebase.components.ComponentRegistrar" />
+66-->[com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3a9fbc4384fbef68e6675d5f56852d33\transformed\jetified-firebase-storage-ktx-20.1.0\AndroidManifest.xml:16:17-82
+67            <meta-data
+67-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\2a6c6f822e8c5771ab0d94eb77065ec0\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:14:13-16:85
+68                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+68-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\2a6c6f822e8c5771ab0d94eb77065ec0\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:15:17-113
+69                android:value="com.google.firebase.components.ComponentRegistrar" />
+69-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\2a6c6f822e8c5771ab0d94eb77065ec0\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:16:17-82
+70            <meta-data
+70-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
+71                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+71-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:68:17-109
+72                android:value="com.google.firebase.components.ComponentRegistrar" />
+72-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
+73            <meta-data
+73-->[com.google.firebase:firebase-database:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3eafafd34224ba26dd52d5e48a49ae3f\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
+74                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+74-->[com.google.firebase:firebase-database:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3eafafd34224ba26dd52d5e48a49ae3f\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:32:17-109
+75                android:value="com.google.firebase.components.ComponentRegistrar" />
+75-->[com.google.firebase:firebase-database:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\3eafafd34224ba26dd52d5e48a49ae3f\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:33:17-82
+76            <meta-data
+76-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\a029a67a53292f9000acfd4b600cacb2\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:19:13-21:85
+77                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+77-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\a029a67a53292f9000acfd4b600cacb2\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:20:17-111
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\a029a67a53292f9000acfd4b600cacb2\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:21:17-82
+79            <meta-data
+79-->[com.google.firebase:firebase-storage:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\9eac2d85f1c3b787bf3fcafb39e468ef\transformed\jetified-firebase-storage-20.1.0\AndroidManifest.xml:32:13-34:85
+80                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+80-->[com.google.firebase:firebase-storage:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\9eac2d85f1c3b787bf3fcafb39e468ef\transformed\jetified-firebase-storage-20.1.0\AndroidManifest.xml:33:17-107
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[com.google.firebase:firebase-storage:20.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\9eac2d85f1c3b787bf3fcafb39e468ef\transformed\jetified-firebase-storage-20.1.0\AndroidManifest.xml:34:17-82
+82        </service>
+83
+84        <activity
+84-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:27:9-44:20
+85            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+85-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
+86            android:excludeFromRecents="true"
+86-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:29:13-46
+87            android:exported="true"
+87-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:30:13-36
+88            android:launchMode="singleTask"
+88-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:31:13-44
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+89-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:32:13-72
+90            <intent-filter>
+90-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
+91                <action android:name="android.intent.action.VIEW" />
+91-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+91-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+92
+93                <category android:name="android.intent.category.DEFAULT" />
+93-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+93-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+94                <category android:name="android.intent.category.BROWSABLE" />
+94-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+94-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+95
+96                <data
+96-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+97                    android:host="firebase.auth"
+97-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+98                    android:path="/"
+98-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+99                    android:scheme="genericidp" />
+99-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+100            </intent-filter>
+101        </activity>
+102        <activity
+102-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
+103            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+103-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:46:13-79
+104            android:excludeFromRecents="true"
+104-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:47:13-46
+105            android:exported="true"
+105-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:48:13-36
+106            android:launchMode="singleTask"
+106-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:49:13-44
+107            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+107-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:50:13-72
+108            <intent-filter>
+108-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:51:13-61:29
+109                <action android:name="android.intent.action.VIEW" />
+109-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+109-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+110
+111                <category android:name="android.intent.category.DEFAULT" />
+111-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+111-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+112                <category android:name="android.intent.category.BROWSABLE" />
+112-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+112-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+113
+114                <data
+114-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+115                    android:host="firebase.auth"
+115-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+116                    android:path="/"
+116-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+117                    android:scheme="recaptcha" />
+117-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\aa7653a1b31405559accd61c28535c0d\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+118            </intent-filter>
+119        </activity>
+120
+121        <provider
+121-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
+122            android:name="com.google.firebase.provider.FirebaseInitProvider"
+122-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
+123            android:authorities="com.example.buynow.firebaseinitprovider"
+123-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
+124            android:directBootAware="true"
+124-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43
+125            android:exported="false"
+125-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:29:13-37
+126            android:initOrder="100" />
+126-->[com.google.firebase:firebase-common:20.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\7cd243ac4ea5cb5020679432a4692b3d\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
+127
+128        <activity
+128-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\c999d825a3fa799d6f5a778e9dd03553\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+129            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+129-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\c999d825a3fa799d6f5a778e9dd03553\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+130            android:exported="false"
+130-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\c999d825a3fa799d6f5a778e9dd03553\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+131-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\c999d825a3fa799d6f5a778e9dd03553\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+132
+133        <meta-data
+133-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\bb6752f9b32388cee377852f948660ec\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+134            android:name="com.google.android.gms.version"
+134-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\bb6752f9b32388cee377852f948660ec\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+135            android:value="@integer/google_play_services_version" />
+135-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\bb6752f9b32388cee377852f948660ec\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+136
+137        <service
+137-->[androidx.room:room-runtime:2.5.0-beta02] C:\Users\jahidhasanco\.gradle\caches\transforms-3\1142bde11c07e94bef1e42208fd2e3bb\transformed\room-runtime-2.5.0-beta02\AndroidManifest.xml:24:9-28:63
+138            android:name="androidx.room.MultiInstanceInvalidationService"
+138-->[androidx.room:room-runtime:2.5.0-beta02] C:\Users\jahidhasanco\.gradle\caches\transforms-3\1142bde11c07e94bef1e42208fd2e3bb\transformed\room-runtime-2.5.0-beta02\AndroidManifest.xml:25:13-74
+139            android:directBootAware="true"
+139-->[androidx.room:room-runtime:2.5.0-beta02] C:\Users\jahidhasanco\.gradle\caches\transforms-3\1142bde11c07e94bef1e42208fd2e3bb\transformed\room-runtime-2.5.0-beta02\AndroidManifest.xml:26:13-43
+140            android:exported="false" />
+140-->[androidx.room:room-runtime:2.5.0-beta02] C:\Users\jahidhasanco\.gradle\caches\transforms-3\1142bde11c07e94bef1e42208fd2e3bb\transformed\room-runtime-2.5.0-beta02\AndroidManifest.xml:27:13-37
+141
+142        <provider
+142-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+143            android:name="androidx.startup.InitializationProvider"
+143-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+144            android:authorities="com.example.buynow.androidx-startup"
+144-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+145            android:exported="false" >
+145-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+146            <meta-data
+146-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+147                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+147-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+148                android:value="androidx.startup" />
+148-->[androidx.emoji2:emoji2:1.2.0] C:\Users\jahidhasanco\.gradle\caches\transforms-3\4572590c2449f1c17dde198b63b11b6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+149            <meta-data
+149-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\35b4b5859ffc8dd657db2d40a50c48df\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+150                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+150-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\35b4b5859ffc8dd657db2d40a50c48df\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+151                android:value="androidx.startup" />
+151-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jahidhasanco\.gradle\caches\transforms-3\35b4b5859ffc8dd657db2d40a50c48df\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+152        </provider>
+153    </application>
+154
+155</manifest>
