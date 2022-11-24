@@ -1,5 +1,5 @@
 name: Update Dependabot config
-
+ 
 on: push
 
 jobs:
