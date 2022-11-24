@@ -1,3 +1,8 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
 # This workflow performs a static analysis of your Kotlin source code using
 # Detekt.
 #
@@ -15,11 +20,11 @@ name: Scan with Detekt
 on:
   # Triggers the workflow on push or pull request events but only for default and protected branches
   push:
-    branches: [ main ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "master" ]
   schedule:
-     - cron: '44 7 * * 4'
+     - cron: '37 23 * * 4'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,7 +45,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Gets the download URL associated with the $DETEKT_RELEASE_TAG
     - name: Get Detekt download URL
@@ -48,7 +53,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        DETEKT_DOWNLOAD_URL=$( gh api graphql --field tagName=$DETEKT_RELEASE_TAG --raw-field query='
+        gh api graphql --field tagName=$DETEKT_RELEASE_TAG --raw-field query='
           query getReleaseAssetDownloadUrl($tagName: String!) {
             repository(name: "detekt", owner: "detekt") {
               release(tagName: $tagName) {
@@ -57,11 +62,21 @@ jobs:
                     downloadUrl
                   }
                 }
+                tagCommit {
+                  oid
+                }
               }
             }
           }
-        ' | \
-        jq --raw-output '.data.repository.release.releaseAssets.nodes[0].downloadUrl' )
+        ' 1> gh_response.json
+        
+        DETEKT_RELEASE_SHA=$(jq --raw-output '.data.repository.release.releaseAssets.tagCommit.oid' gh_response.json)
+        if [ $DETEKT_RELEASE_SHA != "37f0a1d006977512f1f216506cd695039607c3e5" ]; then
+          echo "Release tag doesn't match expected commit SHA"
+          exit 1
+        fi
+        
+        DETEKT_DOWNLOAD_URL=$(jq --raw-output '.data.repository.release.releaseAssets.nodes[0].downloadUrl' gh_response.json)
         echo "::set-output name=download_url::$DETEKT_DOWNLOAD_URL"
     # Sets up the detekt cli
     - name: Setup Detekt
@@ -92,7 +107,7 @@ jobs:
             ${{ github.workspace }}/detekt.sarif.json
         )" > ${{ github.workspace }}/detekt.sarif.json
     # Uploads results to GitHub repository using the upload-sarif action
-    - uses: github/codeql-action/upload-sarif@v1
+    - uses: github/codeql-action/upload-sarif@v2
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: ${{ github.workspace }}/detekt.sarif.json
