@@ -81,6 +81,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:2.10.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.10.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
+    testImplementation 'junit:junit:4.12'
 
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
