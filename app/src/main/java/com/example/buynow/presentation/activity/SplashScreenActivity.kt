@@ -1,5 +1,6 @@
 package com.example.buynow.presentation.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.example.buynow.R
 import com.example.buynow.utils.FirebaseUtils
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

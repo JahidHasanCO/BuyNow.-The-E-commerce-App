@@ -20,11 +20,11 @@
             android:layout_height="480dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/cover_single">
 
 
         </androidx.recyclerview.widget.RecyclerView>
-
 
 
         <LinearLayout
@@ -95,7 +95,10 @@
                 android:id="@+id/newRecView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/single_product">
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
