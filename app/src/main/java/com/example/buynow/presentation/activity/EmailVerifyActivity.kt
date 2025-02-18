@@ -62,36 +62,10 @@ class EmailVerifyActivity : AppCompatActivity() {
     }
 
     private fun sendEmailVerification() {
-
-        if(EmailAddress != null || EmailAddress != "") {
-
-            firebaseUser?.let {
-                it.sendEmailVerification().addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        toast("New Link send your " + EmailAddress + " Email Address.")
-                    }
-                }
-            }
-        }
-        else{
-            val database = firebaseDataBase.getReference("Users")
-            if (firebaseUser != null) {
-                database.child(firebaseUser.uid).get().addOnSuccessListener {
-                    if (it.exists()){
-
-                        val emailGetFromFirebase = it.child("userEmail").value
-
-                        firebaseUser.sendEmailVerification().addOnSuccessListener {
-                            toast("New Link send your " + emailGetFromFirebase + " Email Address.")
-                        }
-
-                    }else{
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
-                }.addOnFailureListener {
-                    toast("Failed")
+        firebaseUser?.let {
+            it.sendEmailVerification().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    toast("New Link send your $EmailAddress Email Address.")
                 }
             }
         }
